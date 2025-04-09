@@ -1,0 +1,271 @@
+body {
+  padding: 20px;
+}
+
+.left {
+  float: left;
+  width: 70%;
+  padding-right: 20px;
+}
+
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Back button styling */
+.back-btn {
+  display: inline-block;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  background-color: #967bb6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #8569a5;
+  color: white;
+  text-decoration: none;
+}
+
+.back-btn:before {
+  content: "\2190"; /* Left arrow character */
+  margin-right: 8px;
+}
+
+
+/* News item styling */
+.news-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.news-title {
+  color: #967bb6;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.news-content {
+  margin-bottom: 15px;
+}
+
+.news-actions {
+  margin: 10px 0;
+}
+
+/* Add News section styling */
+.add-news {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+}
+
+.add-news:h2{
+  color: #967bb6;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.add-news form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-news .news-title {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-news .news-content {
+  width: 100%;
+  min-height: 150px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-news .news-btn {
+  align-self: flex-start;
+  background-color: #967bb6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.add-news .news-btn:hover {
+  background-color: #8569a5;
+}
+
+
+/* Comments section styling */
+.comments-section {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.comment {
+  background-color: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 3px solid #967bb6;
+  border-radius: 5px;
+}
+
+/* Add Comment section styling */
+.add-comment {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-comment label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.add-comment .comment-text {
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.add-comment .comment-btn {
+  align-self: flex-start;
+  background-color: #967bb6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.add-comment .comment-btn:hover {
+  background-color: #8569a5;
+}
+
+
+/* Card styling for sidebar */
+.card-header {
+  background-color: #967bb6;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .news-item {
+    padding: 10px;
+  }
+  
+  .col-lg-4 {
+    margin-top: 20px;
+  }
+}
+
+/* Back button styling */
+.back-btn {
+  margin-bottom: 15px;
+}
+
+/* Image styling */
+.img-fluid {
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive layout - when the screen is less than 800px wide */
+@media screen and (max-width: 800px) {
+  .left, .right {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+  }
+  
+  .right {
+    margin-top: 20px;
+  }
+}
+
+/* Sidebar styling */
+.right {
+  float: right;
+  width: 350px;
+  margin-left: 20px;
+  margin-top: 50px; 
+}
+
+.right .recent-news {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.right .recent-news h5 {
+  background-color: #967bb6;
+  color: white;
+  padding: 12px 15px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.right .recent {
+  padding: 15px;
+}
+
+.right .recent a {
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: #333;
+  text-decoration: none;
+}
+
+.right .recent a:last-child {
+  border-bottom: none;
+}
+
+.right .recent a:hover {
+  color: #967bb6;
+}
+
+/* Responsive adjustment for sidebar */
+@media screen and (max-width: 800px) {
+  .right {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}

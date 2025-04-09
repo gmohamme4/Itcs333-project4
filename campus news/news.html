@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campus News</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="news.css">
+</head>
+
+<body>
+    <div class="container">
+    
+        <!-- News Item Detail -->
+        <div class="left">
+
+            <div class="news-container">
+                <h2>News</h2>
+                <div class="news">
+                    <!-- display all the news  -->
+                </div>
+                    
+                <!-- <div class="news-actions">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div> -->
+                    
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <div class="comment">
+                        <!-- display all  the comments -->
+                    </div>
+                    
+                    <!-- Add Comment -->
+                    <div class="add-comment">
+                        <label for="comment-sec" class="form-label">Comments Section</label>
+                        <textarea class="comment-text" id="comment-text" placeholder="write your own comment ..."></textarea>
+                        <button type="submit" class="comment-btn">add Comment</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="add-news">
+                <h2>Add News</h2>
+                <!-- News Form -->
+                <form class="post-news" id="post-news">
+                    <input type="text" class="news-title" id="nTitle" placeholder="Title" required>
+                    <textarea class="news-content" id="content" placeholder="Content" required></textarea>
+                    <button type="submit" class="news-btn">Post News</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="right">
+            <div class="col-12">
+                <a href="main.html" class="back-btn">&larr; Back to News Listing</a>
+            </div>
+            
+            <div class="recent-news">
+                <h5>Recent News</h5>
+
+                <div class="recent">
+                    <!-- list recent news for 3 days-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
