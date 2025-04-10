@@ -1,206 +1,237 @@
 /* General Body Styling */
 body {
-    background-color: #f9f9f9;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Title */
-  h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-  }
-  
-  /* Search and Filter Section */
-  .search-filter {
-    margin: 30px 0;
-  }
-  
-  .search {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .search input {
-    width: 70%;  /* Make the search input narrower */
-  }
-  
-  .search-btn {
-    background-color: #967bb6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-  }
-  
-  .search-btn:hover {
-    background-color: #7f66a3;
-  }
-  
-  .filter {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .filter-dropdown {
-    width: 45%; /* Make the filter dropdowns narrower */
-  }
-  
-  /* Add New Note Button */
-  .add-note {
-    margin-top: 30px;
-    text-align: center;
-  }
-  
+  background-color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Title */
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+/* Search and Filter Section */
+.search-filter {
+  margin: 30px 0;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search input {
+  width: 70%;  /* Make the search input narrower */
+}
+
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--bs-gutter-x) * .5);
+  padding-left: calc(var(--bs-gutter-x) * .5);
+  margin-top: var(--bs-gutter-y);
+  justify-content: center;
+}
+
+.search-btn {
+  margin: 3px ;
+  background-color: #967bb6;
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: #7f66a3;
+}
+
+.filter {
+  display: flex;
+  gap: 29px;
+}
+
+.filter-dropdown {
+  width: 45%; /* Make the filter dropdowns narrower */
+}
+
+/* Add New Note Button */
+.add-note {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.add-note-btn {
+  background-color: #967bb6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  width: 50%;  /* Make the "Add New Note" button narrower */
+}
+
+.add-note-btn:hover {
+  background-color: #7f66a3;
+}
+
+/* Add Note Modal */
+.add-note-page {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 80%; /* Make the modal content narrower */
+  max-width: 600px; /* Set a maximum width */
+  margin: 0 auto;  /* Center the modal */
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.note-title {
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.btn-close {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.note-body {
+  padding: 20px;
+}
+
+.note-container .form-label {
+  font-weight: bold;
+}
+
+.note-container input,
+.note-container textarea,
+.note-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.note-container input:focus,
+.note-container textarea:focus,
+.note-container select:focus {
+  border-color: #967bb6;
+}
+
+.note-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cancel-btn,
+.save-btn {
+  background-color: #967bb6;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  width: 48%; /* Make buttons narrower */
+}
+
+.cancel-btn:hover,
+.save-btn:hover {
+  background-color: #7f66a3;
+}
+
+/* Modal Footer Buttons */
+.cancel-btn {
+  background-color: #f44336;
+}
+
+.cancel-btn:hover {
+  background-color: #e53935;
+}
+
+/* Form Styling */
+.mb-3 {
+  margin-bottom: 15px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+
+
+
   .add-note-btn {
-    background-color: #967bb6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    width: 50%;  /* Make the "Add New Note" button narrower */
+    width: 100%;
+    margin-top: 20px;
   }
-  
-  .add-note-btn:hover {
-    background-color: #7f66a3;
-  }
-  
-  /* Add Note Modal */
-  .add-note-page {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 80%; /* Make the modal content narrower */
-    max-width: 600px; /* Set a maximum width */
-    margin: 0 auto;  /* Center the modal */
-  }
-  
-  .note-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .note-title {
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  .btn-close {
-    background: transparent;
-    border: none;
-    font-size: 1.2rem;
-  }
-  
+
   .note-body {
-    padding: 20px;
+    padding: 15px;
   }
-  
-  .note-container .form-label {
-    font-weight: bold;
-  }
-  
+
   .note-container input,
   .note-container textarea,
   .note-container select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
-  
-  .note-container input:focus,
-  .note-container textarea:focus,
-  .note-container select:focus {
-    border-color: #967bb6;
-  }
-  
+
   .note-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
   }
-  
+
   .cancel-btn,
   .save-btn {
-    background-color: #967bb6;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    width: 48%; /* Make buttons narrower */
+    width: 100%;
+    margin-top: 10px;
   }
-  
-  .cancel-btn:hover,
-  .save-btn:hover {
-    background-color: #7f66a3;
+
+  /* Adjust modal width for mobile */
+  .add-note-page {
+    width: 95%;
+    max-width: 500px;
   }
-  
-  /* Modal Footer Buttons */
-  .cancel-btn {
-    background-color: #f44336;
-  }
-  
-  .cancel-btn:hover {
-    background-color: #e53935;
-  }
-  
-  /* Form Styling */
-  .mb-3 {
-    margin-bottom: 15px;
-  }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .search {
-      flex-direction: column;
-    }
-  
-    .filter {
-      flex-direction: column;
-    }
-  
-    .add-note-btn {
-      width: 100%;
-      margin-top: 20px;
-    }
-  
-    .note-body {
-      padding: 15px;
-    }
-  
-    .note-container input,
-    .note-container textarea,
-    .note-container select {
-      margin-bottom: 10px;
-    }
-  
-    .note-footer {
-      flex-direction: column;
-    }
-  
-    .cancel-btn,
-    .save-btn {
-      width: 100%;
-      margin-top: 10px;
-    }
-  
-    /* Adjust modal width for mobile */
-    .add-note-page {
-      width: 95%;
-      max-width: 500px;
-    }
-  }
-  
+}
+/* Back button styling */
+.back-btn {
+  display: block;
+  padding: 8px 10px;
+  background-color: #967bb6;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  position: fixed; /* Fix position on screen */
+  bottom: 20px; /* Position from bottom */
+  left: 50%; /* Position at 50% from left */
+  transform: translateX(-50%); /* Center the element */
+  z-index: 100; /* Ensure it stays above other elements */
+  width: fit-content; /* Make width fit the content */
+  text-align: center; /* Center the text inside */
+}
+
+.back-btn:hover {
+  background-color: #8569a5;
+  color: white;
+  text-decoration: none;
+}
+
