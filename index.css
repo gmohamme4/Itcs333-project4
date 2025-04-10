@@ -1,0 +1,134 @@
+:root {
+  --primary-color: #967bb6;
+  --primary-dark: #7a5fa0;
+  --primary-light: #b49cd0;
+  --text-on-primary: #ffffff;
+  --background-color: #f8f5fd;
+  --card-bg: #ffffff;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  color: var(--primary-dark);
+}
+
+/* Main container styling */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.main-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* News container with scrolling feature */
+.news-container {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 5px;
+  border-radius: 8px;
+  background-color: rgba(150, 123, 182, 0.05);
+  border: 1px solid rgba(150, 123, 182, 0.2);
+}
+
+/* News grid layout */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* Scrollbar styling */
+.news-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.news-container::-webkit-scrollbar-track {
+  background: rgba(150, 123, 182, 0.1);
+  border-radius: 10px;
+}
+
+.news-container::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+  border-radius: 10px;
+}
+
+/* Card styling for when user adds news items */
+.news-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-title {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.card-footer {
+  background-color: transparent;
+  border-top: 1px solid rgba(150, 123, 182, 0.2);
+  padding: 0.75rem 1rem;
+}
+
+/* Button styling */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--text-on-primary);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .news-container {
+    max-height: 60vh;
+  }
+  
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer styling */
+.main-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  text-align: center;
+  color: var(--primary-dark);
+  border-top: 1px solid rgba(150, 123, 182, 0.2);
+}
