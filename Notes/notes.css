@@ -3,7 +3,7 @@ body {
   background-color: #f9f9f9;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 10px;
 }
 
 /* Title */
@@ -23,20 +23,12 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
 }
 
 .search input {
   width: 70%;  /* Make the search input narrower */
-}
-
-.row > * {
-  flex-shrink: 0;
-  width: 100%;
-  max-width: 100%;
-  padding-right: calc(var(--bs-gutter-x) * .5);
-  padding-left: calc(var(--bs-gutter-x) * .5);
-  margin-top: var(--bs-gutter-y);
-  justify-content: center;
 }
 
 .search-btn {
