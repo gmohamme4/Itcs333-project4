@@ -33,12 +33,6 @@ body {
   text-decoration: none;
 }
 
-.back-btn:before {
-  content: "\2190"; /* Left arrow character */
-  margin-right: 8px;
-}
-
-
 /* News item styling */
 .news-item {
   border: 1px solid #ddd;
