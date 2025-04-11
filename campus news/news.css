@@ -214,7 +214,7 @@ body {
 /* Sidebar styling */
 .right {
   float: left;
-  width: 350px;
+  width: 330px;
   margin-left: 20px;
   margin-top: 50px; 
   margin-left: 0;
@@ -264,4 +264,11 @@ body {
     margin-left: 0;
     margin-top: 20px;
   }
+}
+
+footer {
+  background-color: #967bb6;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
 }
