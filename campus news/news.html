@@ -10,28 +10,58 @@
 </head>
 
 <body>
-    <div class="container">
-    
-        <!-- News Item Detail -->
-        <div class="left">
+    <div class="topnev">
+        <div class="logo">
+            <h3>Campus Hub</h3>
+        </div>
 
-            <div class="news-container">
-                <h2>Campus News</h2>
+        <div class="bar">
+            <a class="active" href="#home">Home</a>
+            <a href="#comment-section">News</a>
+            <a class="add-news-btn" data-bs-toggle="modal" data-bs-target="#add-news-modal">Add News</a>
+
+            <div class="search">
+                <form action="#">
+                    <div class="dropdown">
+                        <button onclick="active" class="dropbtn"><i class="fa fa-filter"></i></button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="#">Link 1</a>
+                          <a href="#">Link 2</a>
+                          <a href="#">Link 3</a>
+                        </div>
+                      </div>
+                    <input type="text" placeholder="Search.." name="search">
+                    <button>
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="news-container">
+            <div class="right">
+                <div class="recent-news">
+                    <h5>Recent News</h5>
+                    <div class="recent">
+                        <!-- list recent news for 3 days-->
+                    </div>
+                </div>
+            </div>
+
+            <h2>Campus News</h2>
                 <div class="news">
                     <!-- display all the news  -->
                 </div>
-                    
-                <!-- <div class="news-actions">
-                    <button class="edit-btn">Edit</button>
-                    <button class="delete-btn">Delete</button>
-                </div> -->
-                    
+                           
                 <!-- Comments Section -->
                 <div class="comments-section">
                     <div class="comment">
                         <!-- display all  the comments -->
                     </div>
-                    
+                        
                     <!-- Add Comment -->
                     <div class="add-comment">
                         <label for="comment-sec" class="form-label">Comments Section</label>
@@ -40,33 +70,34 @@
                     </div>
                 </div>
             </div>
-
-            <div class="add-news">
-                <h2>Add News</h2>
-                <!-- News Form -->
-                <form class="post-news" id="post-news">
-                    <input type="text" class="news-title" id="nTitle" placeholder="Title" required>
-                    <textarea class="news-content" id="content" placeholder="Content" required></textarea>
-                    <button type="submit" class="news-btn">Post News</button>
-                </form>
-            </div>
         </div>
+    </div>
 
-        <!-- Sidebar -->
-        <div class="right">
-            <div class="col-12">
-                <a href="main.html" class="back-btn">&larr; Back to Main Page</a>
-            </div>
-            
-            <div class="recent-news">
-                <h5>Recent News</h5>
-
-                <div class="recent">
-                    <!-- list recent news for 3 days-->
+        <!-- Add News Modal -->
+        <div class="modal fade" id="add-news-modal" tabindex="-1" aria-labelledby="addNewsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addNewsModalLabel">Add News</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="post-news" id="post-news">
+                            <div class="mb-3">
+                                <input type="text" class="form-control news-title" id="nTitle" placeholder="Title" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control news-content" id="content" placeholder="Content" rows="6" required></textarea>
+                            </div>
+                            <div class="text-end">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn news-btn">Post News</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
     <footer>
         <p>&copy;Campus Hub</p>
