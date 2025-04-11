@@ -6,6 +6,7 @@
          <title>Cource Reviews</title>
          <link rel="stylesheet" href="rev.css">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
         </head>
 
     <body>
@@ -15,7 +16,7 @@
             </div>
         
             <div class="nav-links">
-                <a href="#">Home</a>
+                <a href="index.html">Home</a>
                 <a href="#review">Reviews</a>
                 <a href="create.html" class="add-review">Add Review</a>
             </div>
@@ -52,29 +53,103 @@
        
           <section class="reviews-list">
             <article class="review-item">
-                <h2>Course Name: Intro to Psychology</h2>
+                <h3>Course Name: Intro to Psychology</h3>
                 <p>Professor: Dr. Smith</p>
                 <p>Rating: ⭐⭐⭐⭐⭐</p>
+                <details>
+                    <summary>See More</summary>
+                    <p class="full-review">
+                        <strong>Review:</strong> "This course provided a great introduction to psychology. The lectures were engaging, and Dr. Smith made complex topics easy to understand."
+                    </p>
+                
+                  <details>
+                      <summary>See Comments</summary>
+                       <div class="comments">
+                          <p><strong>User1:</strong> I agree with this review. Dr. Smith is amazing!</p>
+                          <p><strong>User2:</strong> I found the assignments to be a bit challenging, but the lectures were great.</p>
+                       </div>
+                      <details>
+                          <summary>Add Comment</summary>
+                          <form class="add-comment-form">
+                              <label for="new-comment">Add a Comment:</label>
+                              <textarea id="new-comment" rows="3" placeholder="Write your comment here..." required></textarea>
+                              <button type="submit">Post Comment</button>
+                           </form>
+                       </details>
+                    </details>
+                </details>
+
             </article>
-            <!-- Add more review items as needed -->
+            
             <article class="review-item">
-                <h2>Course Name: Advanced Mathematics</h2>
+                <h3>Course Name: Advanced Mathematics</h3>
                 <p>Professor: Dr. Johnson</p>
                 <p>Rating: ⭐⭐⭐⭐</p>
+                <details>
+                    <summary>See More</summary>
+                    <p class="full-review">
+                        <strong>Review:</strong> "This course was challenging but rewarding. Dr. Johnson explained the concepts clearly."
+                    </p>
+                
+                  <details>
+                     <summary>See Comments</summary>
+                     <div class="comments">
+                        <p><strong>User1:</strong> The course was tough, but I learned a lot.</p>
+                      </div>
+                     <details>
+                        <summary>Add Comment</summary>
+                        <form class="add-comment-form">
+                            <label for="new-comment">Add a Comment:</label>
+                            <textarea id="new-comment" rows="3" placeholder="Write your comment here..." required></textarea>
+                            <button type="submit">Post Comment</button>
+                        </form>
+                     </details>
+                  </details>
+                </details>  
             </article>
             <article class="review-item">
-                <h2>Course Name: Chemistry 101</h2>
+                <h3>Course Name: Chemistry 101</h3>
                 <p>Professor: Dr. Brown</p>
                 <p>Rating: ⭐⭐⭐</p>
+                <details>
+                    <summary>See More</summary>
+                    <p class="full-review">
+                        <strong>Review:</strong> "The course was interesting, but the lab sessions were a bit disorganized."
+                    </p>
+                
+                   <details>
+                      <summary>See Comments</summary>
+                      <div class="comments">
+                        <p><strong>User1:</strong> I had a similar experience with the labs.</p>
+                        <p><strong>User2:</strong> The lectures were informative, though.</p>
+                      </div>
+                        <details>
+                            <summary>Add Comment</summary>
+                            <form class="add-comment-form">
+                                <label for="new-comment">Add a Comment:</label>
+                                <textarea id="new-comment" rows="3" placeholder="Write your comment here..." required></textarea>
+                                <button type="submit">Post Comment</button>
+                            </form>
+                        </details>  
+                   </details>   
+                </details>
             </article>
           </section>
-          <section class="pagination">
-            <button>Previous</button>
-            <button>Next</button>
-          </section>
+         
+        
 
-          
+        
+        <div class="back-button">
+            <button><a href="#review">Back to Reviews</a></button>
+        </div>
         </main>
+        <section class="pagination">
+            <button class="prev">Previous</button>
+            <button class="page-number active">1</button>
+            <button class="page-number">2</button>
+            <button class="page-number">3</button>
+            <button class="next">Next</button>
+        </section>
         <footer>
            <p>&copy; Campus Hub</p>
         </footer>
