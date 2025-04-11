@@ -169,3 +169,12 @@
     transform: translateY(2px);
   }
   
+  .footer-bottom {
+    width: 100vw;
+    background-color: #967bb6;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-left: calc(-50vw + 50%); 
+  }
+  
