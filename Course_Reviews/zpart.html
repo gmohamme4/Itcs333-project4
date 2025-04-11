@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html long="en">
+    <head>
+         <meta charset="UTF-B">
+         <meta name="viewport" content="width=device-width, initial-scale=1">
+         <title>Cource Reviews</title>
+         <link rel="stylesheet" href="rev.css">
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        </head>
+
+    <body>
+        <div class="topnev">
+            <div class="logo">
+                <h3>University of Bahrain</h3>
+            </div>
+        
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#review">Reviews</a>
+                <a href="create.html" class="add-review">Add Review</a>
+            </div>
+          <div class="search-filter-container">
+              <section class="search-bar">
+                 <input type="text" placeholder="Search courses or professors ...">
+              </section>
+
+              <div class="dropdown">
+                 <button onclick="active" class="dropbtn"><i class="fa fa-filter"></i></button>
+         
+                 <div class="dropdown-content">
+                     <a href="#">Filter by Department</a>
+                     <a href="#">Filter by Difficulty</a>
+                     <a href="#">Filter by Rating</a>
+                    </div>
+                  
+                
+                 <button onclick="active" class="dropbtn"><i class="fa fa-sort"></i></button>
+         
+                 <div class="dropdown-content">
+                     <a href="#">Sort by Date</a>
+                     <a href="#">Sort by Rating</a>
+                     <a href="#">Sort by Course Name</a>
+                    </div>
+                   
+                 <button class="search-btn"><i class="fa fa-search"></i></button>
+               </div>
+            </div>  
+        </div>
+         
+       <main>
+           <h1 id="review">Cource Reviews</h1>
+       
+          <section class="reviews-list">
+            <article class="review-item">
+                <h2>Course Name: Intro to Psychology</h2>
+                <p>Professor: Dr. Smith</p>
+                <p>Rating: ⭐⭐⭐⭐⭐</p>
+            </article>
+            <!-- Add more review items as needed -->
+            <article class="review-item">
+                <h2>Course Name: Advanced Mathematics</h2>
+                <p>Professor: Dr. Johnson</p>
+                <p>Rating: ⭐⭐⭐⭐</p>
+            </article>
+            <article class="review-item">
+                <h2>Course Name: Chemistry 101</h2>
+                <p>Professor: Dr. Brown</p>
+                <p>Rating: ⭐⭐⭐</p>
+            </article>
+          </section>
+          <section class="pagination">
+            <button>Previous</button>
+            <button>Next</button>
+          </section>
+
+          
+        </main>
+        <footer>
+           <p>&copy; Campus Hub</p>
+        </footer>
+    </body>
+</html>
