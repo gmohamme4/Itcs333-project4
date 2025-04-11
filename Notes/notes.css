@@ -3,7 +3,7 @@ body {
   background-color: #f9f9f9;
   font-family: 'Roboto', sans-serif;
   margin: 0;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* Title */
@@ -65,7 +65,7 @@ h1 {
   background-color: #967bb6;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 5px;
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
@@ -112,6 +112,14 @@ h1 {
   font-weight: bold;
 }
 
+.notes-page {
+  padding: 20px;
+}
+
+.notes-page :h1 {
+  color: #f9f9f9;
+}
+
 .note-container input,
 .note-container textarea,
 .note-container select {
@@ -153,11 +161,11 @@ h1 {
 
 /* Modal Footer Buttons */
 .cancel-btn {
-  background-color: #f44336;
+  background-color: #967bb6;
 }
 
 .cancel-btn:hover {
-  background-color: #e53935;
+  background-color: #7f66a3;
 }
 
 /* Form Styling */
@@ -167,9 +175,6 @@ h1 {
 
 /* Media Queries */
 @media (max-width: 768px) {
-
-
-
 
   .add-note-btn {
     width: 100%;
@@ -202,28 +207,145 @@ h1 {
     max-width: 500px;
   }
 }
-/* Back button styling */
-.back-btn {
-  display: block;
-  padding: 8px 10px;
+
+p {
+  margin: 0;
+}
+
+footer {
+  background-color: #967bb6;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+  
+  .news-item {
+    padding: 10px;
+  }
+  
+  .col-lg-4 {
+    margin-top: 20px;
+  }
+}
+
+/* Image styling */
+.img-fluid {
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgb(255, 255, 255);
+}
+
+.right {
+  margin-bottom: 10px;
+}
+
+.recent-news {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgb(255, 255, 255);
+}
+
+.recent-news h5 {
   background-color: #967bb6;
   color: white;
-  text-decoration: none;
-  border-radius: 4px;
+  padding: 12px 15px;
+  margin: 0;
   font-weight: 500;
-  transition: background-color 0.3s ease;
-  position: fixed; /* Fix position on screen */
-  bottom: 20px; /* Position from bottom */
-  left: 50%; /* Position at 50% from left */
-  transform: translateX(-50%); /* Center the element */
-  z-index: 100; /* Ensure it stays above other elements */
-  width: fit-content; /* Make width fit the content */
-  text-align: center; /* Center the text inside */
 }
 
-.back-btn:hover {
-  background-color: #8569a5;
-  color: white;
+.recent {
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.recent a {
+  display: block;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: #333;
   text-decoration: none;
 }
 
+.recent a:last-child {
+  border-bottom: none;
+}
+
+.recent a:hover {
+  color: #967bb6;
+}
+
+footer {
+  background-color: #967bb6;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.topnev {
+  background-color: #967bb6;
+  color: white;
+  padding: 10px;
+}
+
+.logo h3 {
+  margin: 0;
+}
+
+.bar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: 80%;
+}
+
+.bar a {
+  color: white;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.search {
+  margin-left: auto;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgb(255, 255, 255);
+  z-index: 1;
+}
+
+.dropbtn {
+  background-color: #967bb6;
+  color: white;
+  border: 1px solid #fff;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+button, select {
+  background-color: #967bb6;
+  color: white;
+  border: 1px solid #fff;
+  padding: 2px 6px;
+  cursor: pointer;
+}
