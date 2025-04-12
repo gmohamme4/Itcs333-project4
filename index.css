@@ -151,7 +151,6 @@ h1 {
 
 /* Main container styling */
 .main-container {
-  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
   width: 100%;
@@ -164,7 +163,7 @@ h1 {
 
 main {
   display: flex ;
-  flex-direction: row ;
+  flex-direction: column ;
   flex-wrap: nowrap ;
   width: 100% ;
   align-items: stretch;
@@ -181,35 +180,7 @@ main {
 }
 
 
-/* News container with scrolling feature */
-.news-container {
-  max-height: 70vh;
-  margin-bottom: 20px;
-  padding: 5px;
-  overflow-y: auto;
-  padding-right: 5px;
-  border-radius: 8px;
-  background-color: rgba(150, 123, 182, 0.05);
-  border: 1px solid rgba(150, 123, 182, 0.2);
-}
-
-.news-container h2 {
-  color: #333;
-  margin-bottom: 15px;
-  font-weight: 500;
-  border-bottom: 2px solid #967bb6;
-  padding-bottom: 10px;
-}
-
-/* News grid layout */
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
-}
-
-/* Scrollbar styling */
+/* News container Scrollbar styling */
 .news-container::-webkit-scrollbar {
   width: 8px;
 }
@@ -291,7 +262,11 @@ footer {
 }
 
 /* Styling for the notes container */
-.notes-container {
+.news-container,
+.notes-container, 
+.reviews-container,
+.event-container,
+.study-container {
   background-color: #f8f9fa;
   padding: 20px;
   margin-bottom: 30px;
@@ -300,7 +275,11 @@ footer {
   border: 1px solid rgba(150, 123, 182, 0.2);
 }
 
-.notes-container h2 {
+.news-container h2,
+.notes-container h2,
+.reviews-container h2,
+.event-container h2,
+.study-container h2 {
   color: #333;
   margin-bottom: 15px;
   font-weight: 500;
@@ -309,7 +288,11 @@ footer {
 }
 
 /* Add scrollbar to notes grid */
-.notes-grid {
+.news-grid,
+.notes-grid ,
+.reviews-grid, 
+.event-grid, 
+.study-grid {
   max-height: 400px; /* Set a fixed height to enable scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   padding: 10px 5px;
@@ -339,3 +322,4 @@ footer {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
 }
+

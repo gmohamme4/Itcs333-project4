@@ -8,7 +8,6 @@
     background-color: #f9f8fc;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
   }
   
   h1, h2, .btn, select.form-select, input.form-control {
@@ -25,17 +24,45 @@
     letter-spacing: 2px;
   }
   
-  /* ===== Header Styles ===== */
-  header {
-    background-color: var(--main-purple);
-    padding: 10px 0;
+  .topnev {
+    background-color: #967bb6;
+    color: white;
+    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px;
   }
   
-  header a {
+  .logo h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-left: 30px;
+  }
+  
+  .bar a {
     color: white;
     text-decoration: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bar a:hover {
+    background-color: #8569a5;
+  }
+  
+  .bar a.active {
+    background-color: #8569a5;
     font-weight: bold;
-    margin-right: 20px;
   }
   
   /* ===== Button Styles ===== */
@@ -119,25 +146,27 @@
   
   /* ===== Footer & Pagination ===== */
   footer {
-    margin-top: 30px;
+    background-color: #967bb6;
+    color: #fff;
+    padding: 1rem 0;
     text-align: center;
-    padding-bottom: 20px;
+    margin-top: auto;
   }
   
-  footer button,
-  footer .btn-outline-primary {
+  button,
+  .btn-outline-primary {
     font-size: 0.9rem;
     padding: 8px 15px;
     margin-bottom: 20px;
   }
   
-  footer .btn-outline-primary {
+  .btn-outline-primary {
     background-color: var(--main-purple);
     border-color: var(--main-purple);
     color: white;
   }
   
-  footer .btn-outline-primary:hover {
+  .btn-outline-primary:hover {
     background-color: var(--main-purple-dark);
     border-color: var(--main-purple-dark);
   }
@@ -180,8 +209,8 @@
   
   #add-group-btn {
     background-color: transparent;
-    padding: 0;
     transition: all 0.3s ease;
+    margin-top: 15px;
   }
   
   #add-group-btn:hover {
@@ -189,4 +218,36 @@
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
+/* Cancel button styling */
+#cancel-btn {
+  background-color: #967bb6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  margin-left: 8px;
+}
+
+#cancel-btn:hover {
+  background-color: #684d88;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#cancel-btn:active {
+  transform: translateY(1px);
+}
+
+/* Bootstrap class enhancements */
+.btn-secondary {
+  background-color: #967bb6;
+  border-color: #684d88;
+}
+
+.ms-2 {
+  margin-left: 0.5rem;
+}
+
   
