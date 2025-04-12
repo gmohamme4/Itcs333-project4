@@ -1,0 +1,330 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+.topnev {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #967bb6;
+    color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+.logo h3 {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+    
+}
+.back-icon {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.back-icon a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.back-icon a:hover {
+    color: #0056b3;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+.search-filter-container {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: -40px;
+}
+.dropbtn{
+    border: none;
+    padding:  3px 10px;
+}
+.search-btn{
+    border: none;
+    padding:  3px 10px;
+}
+.search-bar input {
+    margin-bottom: -15px;
+    padding: 4px 10px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-right: -5px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    right: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 4px;
+    
+}
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+}
+header, footer {
+    background-color: #967bb6;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    padding: 1rem;
+}
+
+h1 {
+    margin-bottom: 40px;
+}
+
+button, .add-review-btn a {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button:hover, .add-review-btn a:hover {
+    background-color: #0077b6;
+}
+
+
+.search-bar {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.reviews-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.review-item {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+.review-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.review-item:hover {
+    transform: scale(1.02);
+}
+
+.review-actions .edit-btn,
+.review-actions .delete-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-actions .edit-btn {
+    background-color: #0077b6;
+    color: white;
+}
+
+.review-actions .edit-btn:hover {
+    background-color: #0077b6;
+}
+
+.review-actions .delete-btn {
+    background-color: #DC3545;
+    color: white;
+}
+
+.review-actions .delete-btn:hover {
+    background-color: #A71D2A;
+}
+
+
+.review-item:not([data-user="true"]) .review-actions {
+    display: none;
+}
+
+form {
+    max-width: 500px;
+    margin: auto;
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form label {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.form-buttons button {
+    flex: 1;
+}
+
+.detail-view {
+    background-color: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+.add-comment-form {
+    margin-top: 15px;
+}
+
+.add-comment-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.add-comment-form textarea {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+}
+
+.add-comment-form button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #0077b6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.add-comment-form button:hover {
+    background-color: #00b4d8;
+}
+
+/* Back Button */
+.back-button button {
+    padding: 0.5rem 1rem;
+    background-color: #00b4d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.back-button button:hover {
+    background-color: #967bb6;
+}
+details {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+summary {
+    cursor: pointer;
+    color: #967bb6;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+summary:hover {
+    text-decoration: underline;
+}
+
+.full-review, .comments {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.comments p {
+    margin: 5px 0;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.pagination button {
+    padding: 0.5rem 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #00b4d8;
+    color: #fff;
+}
+
+.pagination .active {
+    background-color: #00b4d8;
+    color: #fff;
+    border-color: #00b4d8;
+    font-weight: bold;
+}

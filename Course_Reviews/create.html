@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Add Course Reviews</title>
+        <link rel="stylesheet" href="rev.css">
+      </head>
+    <body>
+      <header>
+        <h1>Add a Course Review</h1>
+      </header>
+     <main>
+      
+        <form>
+          <div class="back-icon">
+            <a href="zpart.html">
+               &#8592; 
+            </a>
+          </div>
+            <label for="course-name">Course Name *</label>
+            <input type="text" id="course-name" placeholder="Enter course name " required>
+            
+            <label for="professor-name">Professor *</label>
+            <input type="text" id="professor-name" placeholder="Enter professor name" required>
+            
+            <label for="rating">Rating *</label>
+            <select id="rating" required>
+                <option value="">Select Rating</option>
+                <option>⭐</option>
+                <option>⭐⭐</option>
+                <option>⭐⭐⭐</option>
+                <option>⭐⭐⭐⭐</option>
+                <option>⭐⭐⭐⭐⭐</option>
+            </select>
+            
+            <label for="review-text">Review *</label>
+            <textarea id="review-text" rows="5" placeholder="write your review" required></textarea>
+            
+            <div class="form-buttons">
+                <button type="submit">Submit Review</button>
+                <button type="reset">Cancel</button>
+            </div>
+        </form>
+     </main>
+     <footer>
+        <p>&copy; Campus Hub</p>
+     </footer>
+    </body>
+</html>
