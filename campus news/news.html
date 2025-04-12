@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Campus News</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="topnev">
+        <div class="logo">
+            <h3>Campus Hub</h3>
+        </div>
+
+        <div class="bar">
+            <a class="active" href="#home">Home</a>
+            <a href="#comment-section">News</a>
+            <a class="add-news-btn" data-bs-toggle="modal" data-bs-target="#add-news-modal">Add News</a>
+
+            <div class="search">
+                <form action="#">
+                    <div class="dropdown">
+                        <button onclick="active" class="dropbtn"><i class="fa fa-filter"></i></button>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="#">Link 1</a>
+                          <a href="#">Link 2</a>
+                          <a href="#">Link 3</a>
+                        </div>
+                      </div>
+                    <input type="text" placeholder="Search.." name="search">
+                    <button>
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="news-container">
+            <div class="right">
+                <div class="recent-news">
+                    <h5>Recent News</h5>
+                    <div class="recent">
+                        <!-- list recent news for 3 days-->
+                    </div>
+                </div>
+            </div>
+
+            <h2>Campus News</h2>
+                <div class="news">
+                    <!-- display all the news  -->
+                </div>
+                           
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <div class="comment">
+                        <!-- display all  the comments -->
+                    </div>
+                        
+                    <!-- Add Comment -->
+                    <div class="add-comment">
+                        <label for="comment-sec" class="form-label">Comments Section</label>
+                        <textarea class="comment-text" id="comment-text" placeholder="write your own comment ..."></textarea>
+                        <button type="submit" class="comment-btn">add Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Add News Modal -->
+        <div class="modal fade" id="add-news-modal" tabindex="-1" aria-labelledby="addNewsModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addNewsModalLabel">Add News</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="post-news" id="post-news">
+                            <div class="mb-3">
+                                <input type="text" class="form-control news-title" id="nTitle" placeholder="Title" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control news-content" id="content" placeholder="Content" rows="6" required></textarea>
+                            </div>
+                            <div class="text-end">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn news-btn">Post News</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <footer>
+        <p>&copy;Campus Hub</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
