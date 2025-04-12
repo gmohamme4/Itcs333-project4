@@ -1,4 +1,4 @@
-/* General Styles */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -43,6 +43,7 @@ body {
     text-decoration: none;
     color: white;
     font-size: 14px;
+    margin-bottom: 4px;
 }
 .search-filter-container {
     margin-left: auto;
@@ -51,12 +52,23 @@ body {
     gap: 10px;
     margin-top: -40px;
 }
+.dropbtn{
+    border: none;
+    padding:  3px 10px;
+}
+.search-btn{
+    border: none;
+    padding:  3px 10px;
+}
 .search-bar input {
-    padding: 6px 10px;
+    margin-bottom: -15px;
+    padding: 4px 10px;
     font-size: 12px;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 2px;
+    margin-right: -5px;
 }
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -116,21 +128,27 @@ button:hover, .add-review-btn a:hover {
 
 
 .reviews-list {
-    margin-top: 20px;
     display: grid;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
 }
 
 .review-item {
-    background-color: #fff;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 .review-actions {
     margin-top: 10px;
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
+}
+.review-item:hover {
+    transform: scale(1.02);
 }
 
 .review-actions .edit-btn,
