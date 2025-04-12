@@ -1,13 +1,19 @@
+html, body {
+  height: 100%;
+}
+
 body {
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
   align-content: center;
   width: 70%;
   padding: 20px;
+  flex: 1;
 }
-
 
 /* News item styling */
 
@@ -244,6 +250,7 @@ footer {
   color: #fff;
   padding: 1rem 0;
   text-align: center;
+  margin-top: auto;
 }
 
 .topnev {
