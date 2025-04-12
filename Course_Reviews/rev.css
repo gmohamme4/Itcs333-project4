@@ -263,13 +263,13 @@ summary:hover {
 }
 
 .pagination button:hover {
-    background-color: #0077b6;
+    background-color: #00b4d8;
     color: #fff;
 }
 
 .pagination .active {
-    background-color: #0077b6;
+    background-color: #00b4d8;
     color: #fff;
-    border-color: #0077b6;
+    border-color: #00b4d8;
     font-weight: bold;
 }
