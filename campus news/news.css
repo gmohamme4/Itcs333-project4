@@ -346,3 +346,15 @@ footer {
   min-height: 150px;
 }
 
+.heading-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.heading-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+
