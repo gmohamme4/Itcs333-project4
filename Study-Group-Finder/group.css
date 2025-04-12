@@ -1,0 +1,192 @@
+:root {
+    --main-purple: #967bb6;
+    --main-purple-dark: #7d63a2;
+  }
+  
+  /* ===== Body & Global Styles ===== */
+  body {
+    background-color: #f9f8fc;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2, .btn, select.form-select, input.form-control {
+    color: var(--main-purple);
+    border-color: var(--main-purple);
+  }
+  
+  h1, h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  /* ===== Header Styles ===== */
+  header {
+    background-color: var(--main-purple);
+    padding: 10px 0;
+  }
+  
+  header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  /* ===== Button Styles ===== */
+  .btn-primary,
+  .btn-outline-primary,
+  .btn-success {
+    background-color: var(--main-purple);
+    border-color: var(--main-purple);
+    color: white;
+  }
+  
+  .btn-outline-primary:hover,
+  .btn-primary:hover,
+  .btn-success:hover {
+    background-color: var(--main-purple-dark);
+    border-color: var(--main-purple-dark);
+  }
+  
+  .btn-primary {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* ===== Group Listing Grid ===== */
+  .group-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+    margin: 0 100px;
+    justify-items: center;
+  }
+  
+  /* ===== Group Card ===== */
+  .group-card {
+    width: 230px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 15px;
+    height: 280px;
+    transition: transform 0.3s ease;
+  }
+  
+  .group-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  .group-image {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 4px solid var(--main-purple);
+  }
+  
+  /* ===== Group Details Text ===== */
+  .group-details h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .group-time {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .group-subject {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* ===== Footer & Pagination ===== */
+  footer {
+    margin-top: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  footer button,
+  footer .btn-outline-primary {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    margin-bottom: 20px;
+  }
+  
+  footer .btn-outline-primary {
+    background-color: var(--main-purple);
+    border-color: var(--main-purple);
+    color: white;
+  }
+  
+  footer .btn-outline-primary:hover {
+    background-color: var(--main-purple-dark);
+    border-color: var(--main-purple-dark);
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .page-btn {
+    background-color: white;
+    border: 1px solid var(--main-purple);
+    padding: 8px 15px;
+    color: var(--main-purple);
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .page-btn:hover {
+    background-color: var(--main-purple);
+    color: white;
+  }
+  
+  .page-btn:active {
+    transform: translateY(2px);
+  }
+  
+  .footer-bottom {
+    width: 100vw;
+    background-color: #967bb6;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-left: calc(-50vw + 50%); 
+  }
+  
+  #add-group-btn {
+    background-color: transparent;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+  
+  #add-group-btn:hover {
+    background-color: #5b4674;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
