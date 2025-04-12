@@ -20,9 +20,10 @@
         <h5>University of Bahrain</h5>
       </div>
       <nav class="d-flex justify-content-start">
-        <a class="text-white fw-bold text-decoration-none me-3" href="#">Home</a>
+        <a class="text-white fw-bold text-decoration-none me-3" href="#">Home</a>     
         <a class="text-white fw-bold text-decoration-none me-3" href="#study-group-listing">Study Groups</a>
-        <a class="text-white fw-bold text-decoration-none" href="#study-group-finder">Study Group Finder</a>
+        <a class="text-white fw-bold text-decoration-none" href="#study-group-finder"> New Study Group</a>
+        <a id="add-group-btn" class="btn btn-success mb-3">Add New Study Group</a>
     </nav>
     </div>
   </header>
@@ -100,9 +101,6 @@
       <div class="input-group mb-3">
 
       <input type="text" id="search-bar" class="form-control" placeholder="Search for study groups..." aria-label="Search for study groups"/>
-
-
-      
         <!-- Filter Icon -->
         <button class="btn btn-outline-secondary" id="filter-icon" data-bs-toggle="collapse" data-bs-target="#filter-options">
           <i class="fa fa-filter"></i>
@@ -176,8 +174,7 @@
 
     <!-- Item Creation Form -->
     <section class="mb-5">
-      <button id="add-group-btn" class="btn btn-success mb-3">Add New Study Group</button>
-
+      
       <div id="create-group-form" class="card p-4" style="display: none;">
         <form>
           <div class="mb-3">
