@@ -127,7 +127,44 @@ button:hover, .add-review-btn a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
 }
+.review-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
 
+.review-actions .edit-btn,
+.review-actions .delete-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.review-actions .edit-btn {
+    background-color: #0077b6;
+    color: white;
+}
+
+.review-actions .edit-btn:hover {
+    background-color: #0077b6;
+}
+
+.review-actions .delete-btn {
+    background-color: #DC3545;
+    color: white;
+}
+
+.review-actions .delete-btn:hover {
+    background-color: #A71D2A;
+}
+
+
+.review-item:not([data-user="true"]) .review-actions {
+    display: none;
+}
 
 form {
     max-width: 500px;
