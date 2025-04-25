@@ -1,0 +1,108 @@
+[
+    {
+      "id": 1,
+      "title": "Advanced Mathematics Group",
+      "subject": "Mathematics",
+      "time": "11:00 AM",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvvUFClWktvqC8CSJksUcCMGs4LuClrJn3jg&s"
+    },
+    {
+      "id": 2,
+      "title": "Computer Science Discussion",
+      "subject": "Computer Science",
+      "time": "1:45 PM",
+      "image": "https://snit.edu.in/wp-content/uploads/2023/08/computer-science-engineering-1024x683.jpg"
+    },
+    {
+      "id": 3,
+      "title": "History Discussion Group",
+      "subject": "History",
+      "time": "3:00 PM",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKyQLk2MtbGJNwxf9PORQjkUxeGyYBfDb1Bg&s"
+    },
+    {
+      "id": 4,
+      "title": "Physics Study Group",
+      "subject": "Physics",
+      "time": "9:00 AM",
+      "image": "https://cdn.sanity.io/images/i2z87pbo/production/986d42d83b06e224216a5129cdcfd179bf4ce59c-1440x1079.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Literature Club",
+      "subject": "Literature",
+      "time": "11:30 AM",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjfwfYtPxeIsDz3Kk6Ksfe5tNt6SFyG6DkZg&s"
+    },
+    {
+      "id": 6,
+      "title": "Quantum Physics Enthusiasts",
+      "subject": "Physics",
+      "time": "2:00 PM",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdnm90Q1CbkPEoV6ag0A4aH61z1fzXyNfrjA&s"
+    },
+    {
+      "id": 7,
+      "title": "Advanced Computer Science Forum",
+      "subject": "Computer Science",
+      "time": "10:00 AM",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTin_3o3zhmdXO3eZkRWSFsFqCJvf2sYK7MgA&s"
+    },
+    {
+            "id": 8,
+            "title": "Accounting Study Group",
+            "subject": "Accounting",
+            "time": "4:00 PM",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSef0Am-Rkcb9pmSvRb2OK8pYLtEcF3xoifiA&s"
+    },
+    {
+      "id": 9,
+      "title": "Philosophy Discussion Group",
+      "subject": "Literature",
+      "time": "7:00 PM",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsVevR_jRzUhGC1RdkhTgACetMppM8wPhk3w&s"
+    },
+    {
+      "id": 10,
+      "title": "Art and History Society",
+      "subject": "History",
+      "time": "6:00 PM",
+      "image": "https://images.datagraphs.io/w42st/w42st/4eBay04whMzaTR7m7Hop2W"
+    },
+      {
+        "id": 11,
+        "title": "Tourism Insights Group",
+        "subject": "Tourism",
+        "time": "5:00 PM",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9WEE_gMMwGH0tZ7P8m8TJ20rrSgTDR3YOXw&s"
+      },
+      {
+        "id": 12,
+        "title": "Biology Enthusiasts",
+        "subject": "Biology",
+        "time": "10:30 AM",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_5_EqDgU7GhB2gh6-RG-YTkaYDDuJ2MFi2Q&s"
+      },
+      {
+        "id": 13,
+        "title": "Global Economics Forum",
+        "subject": "Economics",
+        "time": "1:00 PM",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9NfZZSx1ZgYF3MHYNGjBdKKNjR4G4UZgA0g&s"
+      },
+      {
+        "id": 14,
+        "title": "Creative Writing Circle",
+        "subject": "Literature",
+        "time": "3:30 PM",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3MykUxy4Qr_4qu7ti9b7VjN7tI4XH8dNwXg&s"
+      },
+      {
+        "id": 15,
+        "title": "Environmental Science Group",
+        "subject": "Environmental Science",
+        "time": "9:30 AM",
+        "image": "https://naturebridge.org/sites/default/files/styles/card_desktop/public/Copy%20of%20YOSE008%20%281%29%20%281%29.jpg?h=56a95386&itok=A8y0abJQ"
+      }
+  ]
+  
