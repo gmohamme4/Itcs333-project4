@@ -47,7 +47,7 @@ textarea:focus {
 button {
     width: 50%;
     padding: 10px;
-    background-color: #967bb6;
+    background-color: #5cb85c;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -60,7 +60,7 @@ button {
 }
 
 button:hover {
-    background-color: #967bb6;
+    background-color: #4cae4c;
 }
 
 .radio-group {
