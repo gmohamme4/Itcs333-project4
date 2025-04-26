@@ -297,6 +297,11 @@ footer {
   background-color: #967bb6;
   color: white;
   padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 
 .logo h3 {
@@ -349,3 +354,30 @@ button, select {
   padding: 2px 6px;
   cursor: pointer;
 }
+
+/* Delete Button Styling */
+.delete-btn {
+  background-color: #967bb6;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 30px; /* Rounded button */
+  font-weight: bold;
+  font-size: reveal;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.delete-btn:hover {
+  background-color: #7f66a3;
+  transform: scale(1.05); /* slight grow on hover */
+}
+
+.delete-btn i {
+  margin-right: 5px;
+}
+
+
