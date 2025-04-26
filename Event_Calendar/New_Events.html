@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>Add New Event</title>
+        <link rel="stylesheet" href="new.css">
+        <script src="events.js" defer></script>
+    </header>
+    <body>
+        <h2>Add New Event</h2>
+        <form action="#" method="post" id="add">
+
+            <label for="Event-title">Event Title:</label>
+            <input type="text" id="Event-title" name="Event-title" required placeholder="Enter Event title">
+            
+            
+            <label for="Event-date">Date:</label>
+            <input type="date" id="Event-date" name="Event-date" required>
+
+           
+            <label for="Event-description">Description:</label>
+            <textarea id="Event-description" name="Event-description" required placeholder="Enter Event Description"></textarea>
+
+           
+            <label for="More-info">More info:</label>
+            <textarea id="More-info" name="More-info" required placeholder="Enter More info"></textarea>
+
+           
+            <label for="Register">Need Register ?</label>
+            <div class="radio-group" >
+            <input type="radio" id="yes" name="Register" value="yes" checked>
+            <label for="yes">Yes</label>
+            <input type="radio" id="no" name="Register" value="No" >
+            <label for="no">No</label>
+            </div>
+
+            <label for="Event-image">Upload Image:</label>
+            <input type="file" id="Event-image" name="Event-image" accept="image/*">
+            
+            
+            <button type="submit">Submit</button>
+        <button type="button" onclick="history.back()">Cancel</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <title>Events Calendar</title>
+    <link rel="stylesheet" href="ev.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="events.js" defer></script>
+</head>
+<body>
+    <div class="topnev">
+        <div class="logo">
+            <h3>Campus Hub</h3>
+        </div>
+        <div class="bar">
+            <a class="active" href="#home">Home</a>
+            <a href="#Events">Events</a>
+            <a href="../Event_Calendar/New_Events.html">Add Events</a>
+            <div class="search">
+                <form action="#">
+                    <div class="dropdown">
+                        <button onclick="myFunc()" class="dropbtn"><i class="fa fa-filter"></i></button>
+                        <div id="myDropdown" class="dropdown-content" style="padding: 10px;">                        
+                            <label for="filter-date">Filter by exact date:</label>
+                            <input type="date" id="filter-date" style="width: 100%; margin-bottom: 10px;">
+                        
+                            <label>Filter by date range:</label>
+                            <input type="date" id="from-date" placeholder="From" style="width: 100%; margin-bottom: 5px;">
+                            <input type="date" id="to-date" placeholder="To" style="width: 100%; margin-bottom: 10px;">
+                        
+                            <div class="quick-filters" style="display: flex; gap: 5px; margin-bottom: 10px;">
+                                <button type="button" class="quick-btn" data-range="today">Today</button>
+                                <button type="button" class="quick-btn" data-range="week">This Week</button>
+                                <button type="button" class="quick-btn" data-range="month">This Month</button>
+                            </div>
+                        
+                            <button type="button" id="apply-filter-btn" style="width: 100%; background-color: #5cb85c; color: white; padding: 8px; border: none;">Apply Filters</button>
+                            <button type="button" id="clear-filter-btn" style="width: 100%; background-color: #bbb; color: black; padding: 6px; border: none; margin-top: 5px;">Clear Filters</button>
+                        </div>
+                        
+                      </div>
+                    <input type="text" placeholder="Search.." name="search" id="main-search">
+                    <button>
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <h1>Events</h1>
+    <p>University events take place throughout the year,
+       from educational <br>showpieces to public lectures,
+       national tours and one-off exhibitions. </p>
+
+    <h5>Upcoming events</h5>
+    <div class="events-grid" id="upcoming-events">
+       
+
+    </div>
+
+    <h5>Past events</h5>
+    <div class="events-grid" id="past-events"> 
+
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h3>Register for Event</h3>
+              <form id="registerForm">
+                <label for="regName">Name:</label>
+                <input type="text" id="regName" required>
+          
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" required>
+          
+                <input type="hidden" id="regEventTitle">
+          
+                <button type="submit">Register</button>
+              </form>
+            </div>
+          </div>
+          
+          <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <span class="info-close-btn">&times;</span>
+                <h3 id="infoTitle"></h3>
+                <p id="infoDesc"></p>
+                <p id="infoDate"></p>
+                <img id="infoImage" src="" alt="Event image">
+                <p id="infotextmore"></p>
+            </div>
+        </div>
+        
+        
+          
+    </div>
+    <div class="pagination">
+        <a href="#">&laquo;</a>
+        <a href="#" class="active">1</a>
+        <a href="#" >2</a>
+        <a href="#">&raquo;</a>
+      </div>
+
+<footer class="last">
+    <p>&copy;Campus Hub</p>
+</footer>  
+
+</body>
+</html>
