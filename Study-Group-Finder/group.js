@@ -20,7 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const imageFileInput = document.getElementById("image-file");
     const imagePreview = document.getElementById("image-preview");
     const pagination = document.getElementById("pagination");
-  
+    const moreInfo= document.getElementById("moreInfo");
+
+
     const groupsPerPage = 10;
     let currentPage = 1;
     let groupsData = [];
@@ -132,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="group-actions" style="position: absolute; top: 8px; right: 8px; z-index: 10;">
             <button class="btn btn-sm btn-outline-secondary more-btn" data-index="${index}">⋮</button>
             <div class="more-menu" style="display:none; position: absolute; top: 25px; right: 0; background: white; border: 1px solid #ccc; border-radius: 4px; z-index: 20;">
+              <button class="btn btn-sm btn-link view-btn" data-index="${index}" style="display:block; width: 100%; text-align: left;">view</button>
               <button class="btn btn-sm btn-link edit-btn" data-index="${index}" style="display:block; width: 100%; text-align: left;">edit</button>
               <button class="btn btn-sm btn-link delete-btn" data-index="${index}" style="display:block; width: 100%; text-align: left; color: red;">delete</button>
             </div>
@@ -212,6 +215,30 @@ document.addEventListener("DOMContentLoaded", () => {
           e.target.parentElement.style.display = 'none';
         });
       });
+
+      document.querySelectorAll('.view-btn').forEach(button => {
+        button.addEventListener('click', e => {
+          e.stopPropagation();
+          const index = e.target.dataset.index;
+          const group = filteredGroups[index];
+      
+          const modal = document.getElementById('moreInfoModal');
+          const modalContent = document.getElementById('modalContent');
+      
+          modalContent.innerHTML = `
+            <h3>${group.title}</h3>
+            <p><strong>Subject:</strong> ${group.subject}</p>
+            <p><strong>Time:</strong> ${group.time}</p>
+            <p><strong>More Info:</strong> ${group.moreInfo || "No additional info"}</p>
+          `;
+          modal.style.display = 'flex';
+        });
+      });
+
+      document.getElementById('closeModalBtn').addEventListener('click', () => {
+        document.getElementById('moreInfoModal').style.display = 'none';
+    });
+
     }
     
     // Function to convert time from 24 hours to 12 hours
@@ -325,6 +352,8 @@ document.addEventListener("DOMContentLoaded", () => {
       imagePreview.style.display = "block";
       selectedImageData = group.image || '';
   
+      document.getElementById("moreInfo").value = group.moreInfo;
+
       if (group.subject.toLowerCase() === "other") {
         otherSubjectInput.style.display = "block";
         otherSubjectInput.value = group.subject;
@@ -355,10 +384,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const titleInput = document.getElementById("groupName");
       const subjectInput = document.getElementById("subject");
       const timeInput = document.getElementById("time");
-  
+      const moreInfoInput = document.getElementById("moreInfo"); 
+
+
+
       let title = titleInput.value.trim();
       let subject = subjectInput.value.trim();
       const timeRaw = timeInput.value.trim();
+      const moreInfo = moreInfoInput.value.trim(); 
+
   
       if (subject.toLowerCase() === "other" && otherSubjectInput.value.trim() !== "") {
         subject = otherSubjectInput.value.trim();
@@ -374,6 +408,7 @@ document.addEventListener("DOMContentLoaded", () => {
         subject,
         time: convertTo12Hour(timeRaw),
         image: selectedImageData || imageUrlInput.value.trim() || 'https://via.placeholder.com/150',
+        moreInfo,
       };
   
       if (createGroupForm.dataset.editIndex !== undefined) {
@@ -451,5 +486,55 @@ document.addEventListener("DOMContentLoaded", () => {
     sortBy?.addEventListener("change", sortGroups);
   
     filterGroups();
+
+
+
+    document.addEventListener('click', function(e) {
+      if (e.target.classList.contains('view-btn')) {
+        const moreInfoTextarea = document.getElementById('moreInfo');
+        
+        let info = 'No info available';
+        if (moreInfoTextarea) {
+          const title = document.getElementById('title')?.value || '';
+          const subject = document.getElementById('subject')?.value || '';
+          const time = document.getElementById('time')?.value || '';
+          const moreInfo = moreInfoTextarea.value || '';
+          
+          info = `Title: ${title}\nSubject: ${subject}\nTime: ${time}\n\nMore Info:\n${moreInfo}`;
+        }
+    
+        document.getElementById('modalContent').textContent = info;
+        document.getElementById('moreInfoModal').style.display = 'flex';
+      }
+    
+      if (e.target.id === 'closeModalBtn' || e.target.id === 'moreInfoModal') {
+        document.getElementById('moreInfoModal').style.display = 'none';
+      }
     });
+    
+  
+
+
+
+  document.getElementById('studyGroupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+    
+     
+    
+      const newGroup = {
+        title: title.value,
+        subject: subject.value,
+        time: time.value,
+        moreInfo: moreInfo.value
+      };
+    
+      filteredGroups.push(newGroup);
+      renderGroups(); 
+    
+      this.reset(); 
+    });
+    
+});
+
+  
   
