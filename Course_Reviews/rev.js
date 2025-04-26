@@ -32,7 +32,34 @@ function renderList(items) {
       app.appendChild(div);
     });
 }
-const API_URL = 'https://jsonplaceholder.typicode.com/posts'; 
+const API_URL = 'https://680d3d23c47cb8074d8ffa84.mockapi.io/api/campuse-reviews/:endpoint'; 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector("review-form"); 
+  form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const course = document.getElementById("course-name").value.trim();
+      const professor = document.getElementById("professor-name").value.trim();
+      const rating = document.getElementById("rating").value;
+      const text = document.getElementById("review-text").value.trim();
+
+      if (!course || !professor || !rating || !text) {
+          alert("Please fill in all fields.");
+          return;
+      }
+
+      const newReview = { course, professor, rating, text };
+      let reviews = JSON.parse(localStorage.getItem("reviews") || "[]");
+      reviews.push(newReview);
+      localStorage.setItem("reviews", JSON.stringify(reviews));
+
+      alert("Review submitted!");
+      form.reset();
+      renderReviews();
+  });
+ renderReviews(); 
+});
+
 
 
 document.querySelector('.search-bar input').addEventListener('input', (e) => {
@@ -90,7 +117,7 @@ function showDetails(review) {
     app.innerHTML = `
       <h2>${item.title}</h2>
       <p>${item.body}</p>
-      <button onclick="fetchData(API_URL).then(data => renderList(data))">Back</button>
+      <button onclick="fetchData(https://680d3d23c47cb8074d8ffa84.mockapi.io/api/campuse-reviews/:endpoint).then(data => renderList(data))">Back</button>
     `;
 }
 
