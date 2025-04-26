@@ -22,7 +22,7 @@
             </div>
           <div class="search-filter-container">
               <section class="search-bar">
-                 <input type="text" placeholder="Search here...">
+                 <input type="text" id="search" placeholder="Search here...">
               </section>
 
               <div class="dropdown">
@@ -32,16 +32,21 @@
                      <a href="#">Filter by Department</a>
                      <a href="#">Filter by Difficulty</a>
                      <a href="#">Filter by Rating</a>
+                     <a href="#">Filter by Course Name</a>
+
                     </div>
                   
                 
                  <button onclick="active" class="dropbtn"><i class="fa fa-sort"></i></button>
          
-                 <div class="dropdown-content">
-                     <a href="#">Sort by Date</a>
-                     <a href="#">Sort by Rating</a>
-                     <a href="#">Sort by Course Name</a>
-                    </div>
+                 <select id="sort" class="dropdown-content">
+                     <option value="asc">Sort Ascending</option>
+                     <option value="desc">Sort Descending</option>
+                     <option value="dep">Sort by Department</option>
+                     <option value="date">Sort by Date</option>
+                     <option value="rate">Sort by Rating</option>
+                     <option value="name">Sort by Course Name</option>
+                 </select>
                    
                  <button class="search-btn"><i class="fa fa-search"></i></button>
                </div>
@@ -206,8 +211,11 @@
             <button class="page-number">3</button>
             <button class="next">Next</button>
         </section>
+        <script src="rev.js" defer></script>
         <footer>
            <p>&copy; Campus Hub</p>
         </footer>
+    
     </body>
 </html>
+ 
