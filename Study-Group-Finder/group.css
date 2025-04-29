@@ -156,11 +156,9 @@ header a {
 
 /* ===== Footer & Pagination ===== */
 footer {
-  margin-top:auto;
   text-align: center;
 }
 footer button {
-  padding: 8px 15px;
   font-size: 0.9rem;
 }
 footer button i {
@@ -171,14 +169,16 @@ footer button i {
   background: var(--main-purple);
   color: #fff;
   text-align: center;
-  padding: 1rem 0;
   margin-left: calc(-50vw + 50%);
+  padding: 1rem 0;
+
 }
 footer .d-flex {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+
 }
 
 
