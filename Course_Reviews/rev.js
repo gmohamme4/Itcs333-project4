@@ -1,23 +1,66 @@
-
+const API_URL = 'https://680d3d23c47cb8074d8ffa84.mockapi.io/api/campuse-reviews/:endpoint';
+let reviews = [];
 async function fetchReviews() {
     try {
       showLoading();
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts'); 
+      const response = await fetch(API_URL.replace(':endpoint', 'reviews')); 
       if (!response.ok) throw new Error('Failed to fetch reviews');
-      const reviews = await response.json();
+       reviews = await response.json();
       hideLoading();
       renderReviews(reviews.slice(0, 10)); 
+      renderPagination(reviews);
     } catch (error) {
       hideLoading();
       console.error('Error fetching reviews:', error);
       showError('Failed to load reviews. Please try again later.');
  } 
 }
-    
+  
+function renderReviews(items = reviews) {
+  const app = document.getElementById('app');
+  app.innerHTML = ''; 
+  items.forEach(item => {
+      const div = document.createElement('div');
+      div.className = 'item';
+      div.innerHTML = `
+          <h3>${item.course}</h3>
+          <p>Professor: ${item.professor}</p>
+          <p>Rating: ${item.rating}</p>
+          <p>${item.text}</p>
+          <div class="comments">
+              <h4>Comments:</h4>
+              <ul>${(item.comments || []).map(comment => `<li>${comment}</li>`).join('')}</ul>
+              <form class="add-comment-form">
+                  <textarea placeholder="Add a comment"></textarea>
+                  <button type="submit">Add Comment</button>
+              </form>
+          </div>
+      `;
+      div.querySelector('.add-comment-form').addEventListener('submit', (e) => {
+          e.preventDefault();
+          const textarea = e.target.querySelector('textarea');
+          if (!textarea.value.trim()) {
+              alert('Comment cannot be empty!');
+              return;
+          }
+          item.comments = item.comments || [];
+          item.comments.push(textarea.value.trim());
+          textarea.value = '';
+          renderReviews(items); 
+      });
+      app.appendChild(div);
+  });
+}
 function showLoading() {
     document.getElementById('loading').style.display = 'block';
 }
-  
+function validateForm() {
+  let x= document.forms["review-form"]["course-name"].value;  
+  if (x == "") {
+    alert("Course name must be filled out");
+    return false;
+  }
+}
 function hideLoading() {
     document.getElementById('loading').style.display = 'none';
 }
@@ -32,7 +75,7 @@ function renderList(items) {
       app.appendChild(div);
     });
 }
-const API_URL = 'https://680d3d23c47cb8074d8ffa84.mockapi.io/api/campuse-reviews/:endpoint'; 
+ 
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector("review-form"); 
@@ -64,7 +107,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.querySelector('.search-bar input').addEventListener('input', (e) => {
     const query = e.target.value.toLowerCase();
-    const filteredReviews = reviews.filter(review => review.title.toLowerCase().includes(query));
+    const filteredReviews = reviews.filter(review => review.course.toLowerCase().includes(query)|| 
+    review.professor.toLowerCase().includes(query));
     renderReviews(filteredReviews);
   });
 document.querySelectorAll('.dropdown-content a').forEach((sortOption) => {
@@ -77,10 +121,13 @@ document.querySelectorAll('.dropdown-content a').forEach((sortOption) => {
       } else if (sortType === 'Sort by Rating') {
         sortedReviews.sort((a, b) => b.rating - a.rating);
       } else if (sortType === 'Sort by Course Name') {
-        sortedReviews.sort((a, b) => a.title.localeCompare(b.title));
+        sortedReviews.sort((a, b) => a.course.localeCompare(b.title));
+      } else  if (sortType === "asc") {
+        sortedReviews.sort((a, b) => a.courseName.localeCompare(b.courseName));
+      } else if (sortType === "desc") {
+        sortedReviews.sort((a, b) => b.courseName.localeCompare(a.courseName));
       }
-  
-      renderReviews(sortedReviews);
+        renderReviews(sortedReviews);
     });
   });
   function renderPagination(reviews, itemsPerPage = 5) {
@@ -100,6 +147,9 @@ document.querySelectorAll('.dropdown-content a').forEach((sortOption) => {
       pagination.appendChild(button);
     }
   }
+  document.addEventListener('DOMContentLoaded', () => {
+    fetchReviews();
+});
   document.querySelectorAll('.add-comment-form').forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
