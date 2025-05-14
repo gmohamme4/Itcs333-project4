@@ -3,6 +3,7 @@
     <title>Events Calendar</title>
     <link rel="stylesheet" href="ev.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="events.js" defer></script>
 </head>
 <body>
     <div class="topnev">
@@ -10,20 +11,31 @@
             <h3>Campus Hub</h3>
         </div>
         <div class="bar">
-            <a class="active" href="#home">Home</a>
-            <a href="#Events">Events</a>
             <a href="../Event_Calendar/New_Events.html">Add Events</a>
             <div class="search">
                 <form action="#">
                     <div class="dropdown">
-                        <button onclick="active" class="dropbtn"><i class="fa fa-filter"></i></button>
-                        <div id="myDropdown" class="dropdown-content">
-                          <a href="#">Link 1</a>
-                          <a href="#">Link 2</a>
-                          <a href="#">Link 3</a>
+                        <button onclick="myFunc()" class="dropbtn"><i class="fa fa-filter"></i></button>
+                        <div id="myDropdown" class="dropdown-content" style="padding: 10px;">                        
+                            <label for="filter-date">Filter by exact date:</label>
+                            <input type="date" id="filter-date" style="width: 100%; margin-bottom: 10px;">
+                        
+                            <label>Filter by date range:</label>
+                            <input type="date" id="from-date" placeholder="From" style="width: 100%; margin-bottom: 5px;">
+                            <input type="date" id="to-date" placeholder="To" style="width: 100%; margin-bottom: 10px;">
+                        
+                            <div class="quick-filters" style="display: flex; gap: 5px; margin-bottom: 10px;">
+                                <button type="button" class="quick-btn" data-range="today">Today</button>
+                                <button type="button" class="quick-btn" data-range="week">This Week</button>
+                                <button type="button" class="quick-btn" data-range="month">This Month</button>
+                            </div>
+                        
+                            <button type="button" id="apply-filter-btn" style="width: 100%; background-color: #5cb85c; color: white; padding: 8px; border: none;">Apply Filters</button>
+                            <button type="button" id="clear-filter-btn" style="width: 100%; background-color: #bbb; color: black; padding: 6px; border: none; margin-top: 5px;">Clear Filters</button>
                         </div>
+                        
                       </div>
-                    <input type="text" placeholder="Search.." name="search">
+                    <input type="text" placeholder="Search.." name="search" id="main-search">
                     <button>
                         <i class="fa fa-search"></i>
                     </button>
@@ -38,124 +50,56 @@
        national tours and one-off exhibitions. </p>
 
     <h5>Upcoming events</h5>
-    <div class="events-grid">
-        <div class="events"> 
-            <div class="padding">
-                <h3>Career Fairs</h3>
-                <p>Connect students with potential employers and internships.</p>
-                <h4>30 April</h4>
-            </div>
-            <div class="event-image">
-                <img src="../Event_Calendar/lmages/20190411010208jobsf.jpg" alt="Career Fairs">
-            </div>
-            <div class="footer">
-                <a href="#Register">Register</a>
-                <span>|</span>
-                <a href="#More">More info</a>
-            </div>
-        </div>
-
-        <div class="events"> 
-            <div class="padding">
-                <h3>Volunteer Days</h3>
-                <p>Organize groups to participate in community service projects.</p>
-                <h4>11 May</h4>
-            </div>
-            <div class="event-image">
-                <img src="../Event_Calendar/lmages/TeenVolunteerDay-20191019-01302.jpg" alt="Volunteer Days">
-            </div>
-            <div class="footer">
-                <a href="#More">More info</a>
-            </div>
-        </div>
-
-        <div class="events"> 
-            <div class="padding">
-                <h3>Workshops on Resume Writing and Interview Skills</h3>
-                <p>Help students prepare for the job market.</p>
-                <h4>15 May</h4>
-            </div>
-            <div class="event-image">
-                <img src="../Event_Calendar/lmages/resume-writing.webp" alt="Workshops on Resume Writing and Interview Skills">
-            </div>
-            <div class="footer">
-                <a href="#Register">Register</a>
-                <span>|</span>
-                <a href="#More">More info</a>
-            </div>
-        </div>
-
-        <div class="events"> 
-            <div class="padding">
-                <h3>Language Exchange Programs</h3>
-                <p>Pair students who are native speakers with those looking to learn a language.</p>
-                <h4>22 May</h4>
-            </div>
-            <div class="event-image">
-                <img src="../Event_Calendar/lmages/Language-exchange-2.jpg" alt="Language Exchange Programs">
-            </div>
-            <div class="footer">
-                <a href="#Register">Register</a>
-                <span>|</span>
-                <a href="#More">More info</a>
-            </div>
-        </div>
-
-        <div class="events"> 
-            <div class="padding">
-                <h3>Game Night</h3>
-                <p>Board games, video games, or trivia competitions for students to unwind.</p>
-                <h4>2 June</h4>
-            </div>
-            <div class="event-image">
-                <img src="../Event_Calendar/lmages/istockphoto-1516645489-612x612.jpg"alt="Game Night">
-            </div>
-            <div class="footer">
-                <a href="#More">More info</a>
-            </div>
-        </div>
-    </div>
-
-    <h5>Past events</h5>
-    <div class="events-grid"> 
-        <div class="events"> 
-            <div class="padding">
-                <h3>Welcome Week Activities</h3>
-                <p>Icebreakers, club fairs, and social mixers to help new students acclimate.</p>
-                <h4>6 january</h4>
-            </div>
-            <div class="event-image">
-                <img src="../Event_Calendar/lmages/Welcome Week Image.jpg" alt="Welcome Week Activities">
-            </div>
-            <div class="footer">
-                <a href="#More">More info</a>
-            </div>
-        </div>
-
-        <div class="events"> 
-            <div class="padding">
-                <h3>Research Symposia</h3>
-                <p>A platform for students and faculty to showcase their research.</p>
-                <h4>5 February</h4>
-            </div>
-            <div class="event-image">
-                <img src='../Event_Calendar/lmages/RCSI Bahrain President hosting Chairman of Supreme Council of Health and HEC Secretary General at Re.jpg' Bahrain President hosting Chairman of Supreme Council of Health and HEC Secretary General at Re.jpg" alt="Research Symposia">
-            </div>
-            <div class="footer">
-                <a href="#More">More info</a>
-            </div>
-        </div>
+    <div class="events-grid" id="upcoming-events">
        
+
     </div>
+    <h5>Past events</h5>
+    <div class="events-grid" id="past-events">
+    </div>
+        <div id="registerModal" class="modal">
+            <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h3>Register for Event</h3>
+              <form id="registerForm">
+                <label for="regName">Name:</label>
+                <input type="text" id="regName" required>
+          
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" required>
+          
+                <input type="hidden" id="regEventTitle">
+                  
+                    <div class="center-button">
+                      <button type="submit" id="submitReg">Submit</button>
+                    </div>
+              </form>
+            </div>
+          </div>
+          
+          <div id="moreInfoModal" class="modal">
+            <div class="modal-content">
+              <span class="close-more">&times;</span>
+              <h3 id="moreTitle"></h3>
+              <img id="moreImage" src="" alt="" style="max-width: 100%; height: auto;" />
+              <p><strong>Date:</strong> <span id="moreDate"></span></p>
+              <p><strong>Description:</strong> <span id="moreDescription"></span></p>
+              <p><strong>More Info:</strong> <span id="moreInfoText"></span></p>
+            </div>
+          </div>
+        
+        
+          
     <div class="pagination">
         <a href="#">&laquo;</a>
         <a href="#" class="active">1</a>
         <a href="#" >2</a>
-        <a href="#">3</a>
-        <a href="#">4</a>
-        <a href="#">5</a>
-        <a href="#">6</a>
         <a href="#">&raquo;</a>
       </div>
+
+<footer class="last">
+    <p>&copy;Campus Hub</p>
+</footer>  
+
 </body>
 </html>
