@@ -1,14 +1,11 @@
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: #f5f5f5;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
 }
-
 .topnev {
     display: flex;
     flex-direction: column;
@@ -20,6 +17,8 @@ body {
 }
 .logo h3 {
     margin: 0;
+    font-size: 20px;
+    color: white;
 }
 .nav-links {
     display: flex;
@@ -38,7 +37,7 @@ body {
 }
 
 .back-icon a:hover {
-    color: #967bb6;
+    color: #0056b3;
 }
 .nav-links a {
     text-decoration: none;
@@ -90,20 +89,11 @@ body {
     text-decoration: none;
     display: block;
 }
-
-header {
+header, footer {
     background-color: #967bb6;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-}
-
-footer {
-    background-color: #967bb6;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: auto;
 }
 
 main {
@@ -117,7 +107,7 @@ h1 {
 button, .add-review-btn a {
     display: inline-block;
     padding: 6px 10px;
-    background-color: #967bb6;
+    background-color: #00b4d8;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -126,7 +116,7 @@ button, .add-review-btn a {
 }
 
 button:hover, .add-review-btn a:hover {
-    background-color: #967bb6;
+    background-color: #0077b6;
 }
 
 
@@ -172,12 +162,12 @@ button:hover, .add-review-btn a:hover {
 }
 
 .review-actions .edit-btn {
-    background-color: #967bb6;
+    background-color: #0077b6;
     color: white;
 }
 
 .review-actions .edit-btn:hover {
-    background-color: #967bb6;
+    background-color: #0077b6;
 }
 
 .review-actions .delete-btn {
@@ -255,7 +245,7 @@ form input, form select, form textarea {
 .add-comment-form button {
     margin-top: 10px;
     padding: 8px 12px;
-    background-color: #967bb6;
+    background-color: #0077b6;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -263,13 +253,13 @@ form input, form select, form textarea {
 }
 
 .add-comment-form button:hover {
-    background-color: #967bb6;
+    background-color: #00b4d8;
 }
 
 /* Back Button */
 .back-button button {
     padding: 0.5rem 1rem;
-    background-color: #967bb6;
+    background-color: #00b4d8;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -328,13 +318,109 @@ summary:hover {
 }
 
 .pagination button:hover {
-    background-color: #967bb6;
+    background-color: #00b4d8;
     color: #fff;
 }
 
 .pagination .active {
-    background-color: #967bb6;
+    background-color: #00b4d8;
     color: #fff;
-    border-color: #967bb6;
+    border-color: #00b4d8;
     font-weight: bold;
 }
+/* Add these styles for loading indicator */
+.loading-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Add message styles */
+.message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    animation: fadeIn 0.3s;
+}
+
+.message.info {
+    background-color: #17a2b8;
+}
+
+.message.success {
+    background-color: #28a745;
+}
+
+.message.warning {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.message.error {
+    background-color: #dc3545;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.edit-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Add responsive media queries */
+@media (max-width: 768px) {
+    .topnev {
+        flex-direction: column;
+    }
+    
+    .search-filter-container {
+        margin-top: 10px;
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .reviews-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) {
+    .topnev {
+        flex-direction: row;
+    }
+    
+    .search-filter-container {
+        margin-left: auto;
+        margin-top: 0;
+    }
+}
+
