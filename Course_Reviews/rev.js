@@ -57,57 +57,83 @@ function createReviewElement(review) {
 // Fetch reviews from the API
 function fetchReviews() {
     console.log('Fetching reviews...');
+    reviewsList.innerHTML = '<div class="loading">Loading reviews...</div>';
     
-    // Show loading state
-    if (reviewsList) {
-        reviewsList.innerHTML = '<div class="loading">Loading reviews...</div>';
-    }
-    
-    // Fetch from API
     fetch(API_URL)
         .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+            if (!response.ok) throw new Error('Network response was not ok');
             return response.json();
         })
         .then(data => {
-            console.log('Reviews data received:', data);
-            console.log('Fetched data:', data);
-            console.log('All reviews:', allReviews);
-            console.log('Filtered reviews:', filteredReviews);
-            // Handle different API response formats
-            if (data.reviews) {
-                allReviews = data.reviews;
-            } else if (Array.isArray(data)) {
-                allReviews = data;
-            } else {
-                allReviews = [];
-                console.error('Unexpected data format:', data);
+            console.log('API response:', data);
+            
+            // Handle both the new format and legacy formats
+            let reviews = data.reviews || data;
+            
+            if (!Array.isArray(reviews)) {
+                throw new Error('Invalid reviews data format');
             }
             
-            // If no reviews, create sample data
-            if (allReviews.length === 0) {
-                allReviews = getSampleReviews();
-            }
-            
+            allReviews = reviews;
             filteredReviews = [...allReviews];
             renderReviews();
             setupPagination();
+            
+            // Show source information if available
+            if (data.meta) {
+                console.log(`Data source: ${data.meta.source}, ${data.meta.count} reviews`);
+                if (data.meta.db_error) {
+                    console.error('Database error:', data.meta.db_error);
+                }
+            }
         })
         .catch(error => {
             console.error('Error fetching reviews:', error);
-            
-            // Use sample data if fetch fails
+            showMessage('Failed to load reviews. Using sample data.', 'error');
             allReviews = getSampleReviews();
             filteredReviews = [...allReviews];
-            
             renderReviews();
             setupPagination();
-            
-            showMessage('Failed to load reviews from server. Showing sample data.', 'error');
         });
 }
+
+function submitReview(event) {
+    event.preventDefault();
+    
+    const courseName = document.getElementById('course-name').value;
+    const professor = document.getElementById('professor-name').value;
+    const rating = document.getElementById('rating').value.length; // Count stars
+    const reviewText = document.getElementById('review-text').value;
+    
+    const newReview = {
+        courseName,
+        professor,
+        rating,
+        reviewText
+    };
+    
+    fetch(API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newReview)
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Failed to submit review');
+        return response.json();
+    })
+    .then(data => {
+        showMessage('Review submitted successfully!', 'success');
+        window.location.href = 'zpart.html'; // Redirect back to reviews page
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        showMessage('Failed to submit review. Please try again.', 'error');
+    });
+}
+
+
 
 function setupEventListeners() {
     searchBtn.addEventListener('click', () => {
