@@ -18,17 +18,17 @@
         </div>
 
         <div class="bar">
-            <a class="active" href="../index.html">Home</a>
+            <a class="active" href="../../index.html">Home</a>
             <a class="add-news-btn" data-bs-toggle="modal" data-bs-target="#add-news-modal">Add News</a>
 
             <div class="search">
                 <form action="#">
                     <div class="dropdown">
-                        <button onclick="active" class="dropbtn"><i class="fa fa-filter"></i></button>
+                        <button onclick="toggleDropdown()" class="dropbtn"><i class="fa fa-filter"></i></button>
                         <div id="myDropdown" class="dropdown-content">
-                          <a href="#">Link 1</a>
-                          <a href="#">Link 2</a>
-                          <a href="#">Link 3</a>
+                            <a href="#" onclick="filterNews('all')">All News</a>
+                            <a href="#" onclick="filterNews('today')">Today</a>
+                            <a href="#" onclick="filterNews('week')">This Week</a>
                         </div>
                       </div>
                     <input type="text" placeholder="Search.." name="search">
@@ -55,20 +55,6 @@
             <h2>Campus News</h2>
                 <div class="news">
                     <!-- display all the news  -->
-                </div>
-                           
-                <!-- Comments Section -->
-                <div class="comments-section">
-                    <div class="comment">
-                        <!-- display all  the comments -->
-                    </div>
-                        
-                    <!-- Add Comment -->
-                    <div class="add-comment">
-                        <label for="comment-sec" class="form-label">Comments Section</label>
-                        <textarea class="comment-text" id="comment-text" placeholder="write your own comment ..."></textarea>
-                        <button type="submit" class="comment-btn">add Comment</button>
-                    </div>
                 </div>
             </div>
         </div>
