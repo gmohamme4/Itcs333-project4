@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html long="en">
+<html lang="en">
     <head>
-         <meta charset="UTF-B">
+         <meta charset="UTF-8">
          <meta name="viewport" content="width=device-width, initial-scale=1">
          <title>Cource Reviews</title>
          <link rel="stylesheet" href="rev.css">
@@ -57,150 +57,12 @@
        <main>
            <h1 id="review">Cource Reviews</h1>
        
-          <section class="reviews-list">
-            <article class="review-item">
-                <h3>Course Name: Intro to Psychology</h3>
-                <p>Professor: Dr. Smith</p>
-                <p>Rating: ⭐⭐⭐⭐⭐</p>
-                <details>
-                    <summary>See More</summary>
-                    <p class="full-review">
-                        <strong>Review:</strong> "This course provided a great introduction to psychology. The lectures were engaging, and Dr. Smith made complex topics easy to understand."
-                    </p>
-                
-                  <details>
-                      <summary>See Comments</summary>
-                       <div class="comments">
-                          <p><strong>User1:</strong> I agree with this review. Dr. Smith is amazing!</p>
-                          <p><strong>User2:</strong> I found the assignments to be a bit challenging, but the lectures were great.</p>
-                       </div>
-                      <details>
-                          <summary>Add Comment</summary>
-                          <form class="add-comment-form">
-                              <label for="new-comment">Add a Comment:</label>
-                              <textarea id="new-comment" rows="3" placeholder="Write your comment here..." required></textarea>
-                              <button type="submit">Post Comment</button>
-                           </form>
-                       </details>
-                    </details>
-                </details>
-                <div class="review-actions">
-                    <button class="edit-btn">Edit</button>
-                    <button class="delete-btn">Delete</button>
-                </div>
-            </article>
-            
-            <article class="review-item">
-                <h3>Course Name: Advanced Mathematics</h3>
-                <p>Professor: Dr. Johnson</p>
-                <p>Rating: ⭐⭐⭐⭐</p>
-                <details>
-                    <summary>See More</summary>
-                    <p class="full-review">
-                        <strong>Review:</strong> "This course was challenging but rewarding. Dr. Johnson explained the concepts clearly."
-                    </p>
-                
-                  <details>
-                     <summary>See Comments</summary>
-                     <div class="comments">
-                        <p><strong>User1:</strong> The course was tough, but I learned a lot.</p>
-                      </div>
-                     <details>
-                        <summary>Add Comment</summary>
-                        <form class="add-comment-form">
-                            <label for="new-comment">Add a Comment:</label>
-                            <textarea id="new-comment" rows="3" placeholder="Write your comment here..." required></textarea>
-                            <button type="submit">Post Comment</button>
-                        </form>
-                     </details>
-                  </details>
-                </details>  
-            </article>
-            <article class="review-item">
-                <h3>Course Name: Chemistry 101</h3>
-                <p>Professor: Dr. Brown</p>
-                <p>Rating: ⭐⭐⭐</p>
-                <details>
-                    <summary>See More</summary>
-                    <p class="full-review">
-                        <strong>Review:</strong> "The course was interesting, but the lab sessions were a bit disorganized."
-                    </p>
-                
-                   <details>
-                      <summary>See Comments</summary>
-                      <div class="comments">
-                        <p><strong>User1:</strong> I had a similar experience with the labs.</p>
-                        <p><strong>User2:</strong> The lectures were informative, though.</p>
-                      </div>
-                        <details>
-                            <summary>Add Comment</summary>
-                            <form class="add-comment-form">
-                                <label for="new-comment">Add a Comment:</label>
-                                <textarea id="new-comment" rows="3" placeholder="Write your comment here..." required></textarea>
-                                <button type="submit">Post Comment</button>
-                            </form>
-                        </details>  
-                   </details>   
-                </details>
-            </article>
-            <article class="review-item">
-                <h3>Course Name: History of Art</h3>
-                <p>Professor: Dr. Green</p>
-                <p>Rating: ⭐⭐⭐⭐⭐</p>
-                <details>
-                    <summary>See More</summary>
-                    <p class="full-review">
-                        <strong>Review:</strong> "An excellent course! Dr. Green is very knowledgeable and passionate about the subject."
-                    </p>
-                
-                   <details>
-                      <summary>See Comments</summary>
-                      <div class="comments">
-                        <p><strong>User1:</strong> I loved this course! The field trips were amazing.</p>
-                      </div>
-                        <details>
-                            <summary>Add Comment</summary>
-                            <form class="add-comment-form">
-                                <label for="new-comment">Add a Comment:</label>
-                                <textarea id="new-comment" rows="3" placeholder="Write your comment here..." required></textarea>
-                                <button type="submit">Post Comment</button>
-                            </form>
-                        </details>  
-                   </details>   
-                </details>
-                <div class="review-actions">
-                    <button class="edit-btn">Edit</button>
-                    <button class="delete-btn">Delete</button>
-                </div>
-            </article>
-            <article class="review-item">
-                <h3>Course Name: Computer Science Basics</h3>
-                <p>Professor: Dr. White</p>
-                <p>Rating: ⭐⭐⭐⭐</p>
-                <details>
-                    <summary>See More</summary>
-                    <p class="full-review">
-                        <strong>Review:</strong> "A great introduction to programming. Dr. White is very helpful."
-                    </p>
-                
-                   <details>
-                      <summary>See Comments</summary>
-                      <div class="comments">
-                        <p><strong>User1:</strong> I found the course very useful for beginners.</p>
-                      </div>
-                        <details>
-                            <summary>Add Comment</summary>
-                            <form class="add-comment-form">
-                                <label for="new-comment">Add a Comment:</label>
-                                <textarea id="new-comment" rows="3" placeholder="Write your comment here..." required></textarea>
-                                <button type="submit">Post Comment</button>
-                            </form>
-                        </details>  
-                   </details>   
-                </details>
-                </article>
-            </section>
-         
+          <section class="reviews-list"></section>
+
+           <div id="reviews-container">
+           <!-- Reviews will be loaded here -->
+           </div>
+
         <div class="back-button">
             <button><a href="#review">Back to Reviews</a></button>
         </div>
