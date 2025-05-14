@@ -19,6 +19,8 @@ function createReviewElement(review) {
     reviewItem.className = 'review-item';
     reviewItem.setAttribute('data-id', review.id);
 
+    // Safely handle comments data
+    const comments = Array.isArray(review.comments) ? review.comments : [];
     
     reviewItem.innerHTML = `
         <h3>Course Name: ${review.courseName}</h3>
@@ -28,17 +30,19 @@ function createReviewElement(review) {
             <summary>See More</summary>
             <p class="full-review"><strong>Review:</strong> "${review.reviewText}"</p>
             
-            <!-- UPDATED COMMENTS SECTION STARTS HERE -->
             <details class="comments-section">
-                <summary>Comments (${review.comments?.length || 0})</summary>
+                <summary>Comments (${comments.length})</summary>
                 <div class="comments-list">
-                    ${(review.comments || []).map(c => `
-                        <div class="comment">
-                            <strong>${c.user}:</strong> 
-                            <p>${c.text}</p>
-                            <small>${new Date(c.createdAt).toLocaleDateString()}</small>
-                        </div>
-                    `).join('')}
+                    ${comments.length > 0 ? 
+                        comments.map(c => `
+                            <div class="comment">
+                                <strong>${c.user || 'Anonymous'}:</strong> 
+                                <p>${c.text}</p>
+                                <small>${c.createdAt ? new Date(c.createdAt).toLocaleDateString() : ''}</small>
+                            </div>
+                        `).join('') : 
+                        '<p>No comments yet</p>'
+                    }
                 </div>
                 
                 <form class="add-comment-form" data-reviewid="${review.id}">
@@ -46,8 +50,8 @@ function createReviewElement(review) {
                     <button type="submit">Post Comment</button>
                 </form>
             </details>
-            <!-- UPDATED COMMENTS SECTION ENDS HERE -->
-            
+            <button class="edit-btn" data-id="${review.id}">Edit</button>
+            <button class="delete-btn" data-id="${review.id}">Delete</button>
         </details>
     `;
 
@@ -61,15 +65,21 @@ function fetchReviews() {
             return response.json();
         })
         .then(data => {
+            console.log('API Response:', data); // Debug log
             if (data.status === 'error') throw new Error(data.message);
             allReviews = data.reviews || [];
+            
+            // Check if comments exist in the first review
+            if (allReviews.length > 0) {
+                console.log('First review comments:', allReviews[0].comments);
+            }
+            
             filteredReviews = [...allReviews];
             renderReviews();
         })
         .catch(error => {
             console.error('Fetch error:', error);
             showMessage(`API Error: ${error.message}`, 'error');
-            // Fallback to sample data if needed
             allReviews = getSampleReviews();
             filteredReviews = [...allReviews];
             renderReviews();
@@ -132,6 +142,12 @@ function editReview(reviewId) {
     const newReviewText = prompt('Review Text:', review.reviewText);
 
     if (newCourseName && newProfessor && newRating && newReviewText) {
+        // Show loading state
+        const editBtn = document.querySelector(`.edit-btn[data-id="${reviewId}"]`);
+        const originalText = editBtn.textContent;
+        editBtn.textContent = "Updating...";
+        editBtn.disabled = true;
+
         fetch(API_URL, {
             method: 'PUT',
             headers: {
@@ -145,7 +161,14 @@ function editReview(reviewId) {
                 reviewText: newReviewText
             })
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { 
+                    throw new Error(err.message || 'Update failed with status ' + response.status) 
+                });
+            }
+            return response.json();
+        })
         .then(data => {
             if (data.status === 'success') {
                 fetchReviews(); // Refresh the list
@@ -156,29 +179,67 @@ function editReview(reviewId) {
         .catch(error => {
             console.error('Error:', error);
             alert('Error updating review: ' + error.message);
+        })
+        .finally(() => {
+            if (editBtn) {
+                editBtn.textContent = originalText;
+                editBtn.disabled = false;
+            }
         });
     }
 }
 
 // Delete review
 function deleteReview(reviewId) {
-    if (confirm('Are you sure you want to delete this review?')) {
-        fetch(`${API_URL}?id=${reviewId}`, {
-            method: 'DELETE'
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                fetchReviews(); // Refresh the list
-            } else {
-                throw new Error(data.message || 'Deletion failed');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Error deleting review: ' + error.message);
-        });
+    console.log('Attempting to delete review ID:', reviewId);
+    
+    if (!confirm('Are you sure you want to delete this review?')) {
+        console.log('Delete canceled by user');
+        return;
     }
+
+    // Show loading state
+    const deleteBtn = document.querySelector(`.delete-btn[data-id="${reviewId}"]`);
+    const originalText = deleteBtn.textContent;
+    deleteBtn.textContent = "Deleting...";
+    deleteBtn.disabled = true;
+
+    fetch(`${API_URL}?id=${reviewId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        mode: 'cors' // Explicitly enable CORS
+    })
+    .then(response => {
+        console.log('Response status:', response.status);
+        if (!response.ok) {
+            // Try to get error message from response
+            return response.text().then(text => {
+                try {
+                    const data = JSON.parse(text);
+                    throw new Error(data.message || `Delete failed with status ${response.status}`);
+                } catch {
+                    throw new Error(text || `Delete failed with status ${response.status}`);
+                }
+            });
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Delete successful:', data);
+        fetchReviews(); // Refresh the list
+    })
+    .catch(error => {
+        console.error('Delete error:', error);
+        alert('Error deleting review: ' + error.message);
+    })
+    .finally(() => {
+        if (deleteBtn) {
+            deleteBtn.textContent = originalText;
+            deleteBtn.disabled = false;
+        }
+    });
 }
 
 // Setup event listeners
@@ -226,14 +287,20 @@ document.addEventListener('submit', async function(e) {
             alert('Error: ' + error.message);
         }
     }
-});
+});    
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('edit-btn')) {
             editReview(e.target.dataset.id);
-        } else if (e.target.classList.contains('delete-btn')) {
-            deleteReview(e.target.dataset.id);
-        }
+        } 
     });
+    document.addEventListener('click', (e) => {
+    console.log('Clicked element:', e.target); // Debug what's being clicked
+    
+    if (e.target.classList.contains('delete-btn')) {
+        console.log('Delete button clicked for ID:', e.target.dataset.id);
+        deleteReview(e.target.dataset.id);
+    }
+});
 
     // Comment submission
     
