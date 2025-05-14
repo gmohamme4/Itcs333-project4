@@ -3,7 +3,8 @@ let notesData = [];
 let filteredData = [];
 let currentPage = 1;
 const notesPerPage = 5;
-const apiURL = "https://680d21d1c47cb8074d8fa417.mockapi.io/api/notes/CourseNotes";
+const apiURL = "http://localhost:8080/notes/backend/api/notes.php";
+
 
 // Elements
 const notesList = document.getElementById('notesList');
