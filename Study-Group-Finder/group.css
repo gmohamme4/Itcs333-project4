@@ -1,253 +1,446 @@
 :root {
-    --main-purple: #967bb6;
-    --main-purple-dark: #7d63a2;
-  }
-  
-  /* ===== Body & Global Styles ===== */
-  body {
-    background-color: #f9f8fc;
-    font-family: Arial, sans-serif;
-    margin: 0;
-  }
-  
-  h1, h2, .btn, select.form-select, input.form-control {
-    color: var(--main-purple);
-    border-color: var(--main-purple);
-  }
-  
-  h1, h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  
-  .topnev {
-    background-color: #967bb6;
-    color: white;
-    padding: 15px 20px;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 10px;
-  }
-  
-  .logo h3 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .bar {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    margin-left: 30px;
-  }
-  
-  .bar a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
-    margin: 0 5px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .bar a:hover {
-    background-color: #8569a5;
-  }
-  
-  .bar a.active {
-    background-color: #8569a5;
-    font-weight: bold;
-  }
-  
-  /* ===== Button Styles ===== */
-  .btn-primary,
-  .btn-outline-primary,
-  .btn-success {
-    background-color: var(--main-purple);
-    border-color: var(--main-purple);
-    color: white;
-  }
-  
-  .btn-outline-primary:hover,
-  .btn-primary:hover,
-  .btn-success:hover {
-    background-color: var(--main-purple-dark);
-    border-color: var(--main-purple-dark);
-  }
-  
-  .btn-primary {
-    padding: 8px 15px;
-    border-radius: 5px;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  /* ===== Group Listing Grid ===== */
-  .group-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 30px;
-    padding: 20px 0;
-    margin: 0 100px;
-    justify-items: center;
-  }
-  
-  /* ===== Group Card ===== */
-  .group-card {
-    width: 230px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 15px;
-    height: 280px;
-    transition: transform 0.3s ease;
-  }
-  
-  .group-card:hover {
-    transform: translateY(-10px);
-  }
-  
-  .group-image {
-    width: 130px;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 15px;
-    border: 4px solid var(--main-purple);
-  }
-  
-  /* ===== Group Details Text ===== */
-  .group-details h3 {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .group-time {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 10px;
-  }
-  
-  .group-subject {
-    font-size: 0.9rem;
-    color: #777;
-  }
-  
-  /* ===== Footer & Pagination ===== */
-  footer {
-    background-color: #967bb6;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-    margin-top: auto;
-  }
-  
-  button,
-  .btn-outline-primary {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-    margin-bottom: 20px;
-  }
-  
-  .btn-outline-primary {
-    background-color: var(--main-purple);
-    border-color: var(--main-purple);
-    color: white;
-  }
-  
-  .btn-outline-primary:hover {
-    background-color: var(--main-purple-dark);
-    border-color: var(--main-purple-dark);
-  }
-  
-  .pagination {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .page-btn {
-    background-color: white;
-    border: 1px solid var(--main-purple);
-    padding: 8px 15px;
-    color: var(--main-purple);
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-  }
-  
-  .page-btn:hover {
-    background-color: var(--main-purple);
-    color: white;
-  }
-  
-  .page-btn:active {
-    transform: translateY(2px);
-  }
-  
-  .footer-bottom {
-    width: 100vw;
-    background-color: #967bb6;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-left: calc(-50vw + 50%); 
-  }
-  
-  #add-group-btn {
-    background-color: transparent;
-    transition: all 0.3s ease;
-    margin-top: 15px;
-  }
-  
-  #add-group-btn:hover {
-    background-color: #5b4674;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+  --main-purple: #967bb6;
+  --main-purple-dark: #7d63a2;
+  --main-dark: #333;
+  --main-light: #f9f8fc;
+  --light-gray: #ddd;
+}
 
-/* Cancel button styling */
-#cancel-btn {
-  background-color: #967bb6;
+/* ===== Global Styles ===== */
+body {
+  background: var(--main-light);
+  font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+  margin: 0; 
+  padding: 0;
+  color: var(--main-dark);
+}
+
+/* Headings and form controls color & border */
+h1, h2, .btn, select.form-select, input.form-control {
+  color: var(--main-purple);
+  border-color: var(--main-purple);
+}
+
+/* Headings style */
+h1, h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+h1 { display: none; } /* hide h1 */
+
+/* ===== Header ===== */
+header {
+  background: var(--main-purple);
+  padding: 10px 0;
+}
+header a {
   color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+/* ===== Search Bar (positioned top-right) ===== */
+#search-bar-container {
+  position: absolute;
+  top: 10px; right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Filter and sort icon buttons style */
+#filter-icon, #sort-icon {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  border-radius: 50%;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+#filter-icon:hover, #sort-icon:hover {
+  background: #5b4674;
+}
+#filter-icon i, #sort-icon i {
+  font-size: 1.1rem;
+}
+
+/* ===== Buttons ===== */
+.btn-primary, .btn-outline-primary, .btn-success, footer .btn-outline-primary {
+  background: var(--main-purple);
+  border-color: var(--main-purple);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover, .btn-outline-primary:hover, .btn-success:hover, footer .btn-outline-primary:hover {
+  background: var(--main-purple-dark);
+  border-color: var(--main-purple-dark);
+}
+.btn-primary {
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+/* Add group button: transparent with hover effect */
+#add-group-btn {
+  background: transparent;
+  padding: 0;
   transition: all 0.3s ease;
-  margin-left: 8px;
+}
+#add-group-btn:hover {
+  background: #5b4674;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-#cancel-btn:hover {
-  background-color: #684d88;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+/* ===== Group Listing Grid ===== */
+.group-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 0 30px;
+  justify-items: center;
+}
+@media (max-width: 768px) {
+  .group-container { padding: 0 20px; }
+  .group-card { width: 100%; }
+  h1, h2 { font-size: 1.8rem; }
 }
 
-#cancel-btn:active {
-  transform: translateY(1px);
+/* ===== Group Card ===== */
+.group-card {
+  width: 230px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+  height: 280px;
+  transition: transform 0.3s ease;
+  margin: 10px;
+  position: relative;
+}
+.group-card:hover {
+  transform: translateY(-10px);
 }
 
-/* Bootstrap class enhancements */
-.btn-secondary {
+/* Group image circle with border */
+.group-image {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid var(--main-purple);
+}
+
+/* ===== Group Details ===== */
+.group-details h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+.group-time, .group-subject {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* ===== Footer & Pagination ===== */
+footer {
+  text-align: center;
+}
+footer button {
+  font-size: 0.9rem;
+}
+footer button i {
+  font-size: 1.2rem;
+}
+.footer-bottom {
+  width: 100vw;
+  background: var(--main-purple);
+  color: #fff;
+  text-align: center;
+  margin-left: calc(-50vw + 50%);
+  padding: 1rem 0;
+
+}
+footer .d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+
+/* ===== Loading & Error States ===== */
+.loading, .error {
+  text-align: center;
+  display: none;
+}
+
+/* ===== Inputs & Placeholders ===== */
+#search-bar, #subject-filter, #time-filter, #sort-by {
+  margin-bottom: 20px;
+}
+select, input[type="text"] {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+input[type="text"]::placeholder, select::placeholder {
+  color: #888;
+}
+input[type="text"]:focus, select:focus {
+  border-color: var(--main-purple);
+}
+
+/* Fix input[type=time] font and direction */
+input[type="time"] {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: ltr;
+  unicode-bidi: plaintext;
+}
+
+/* ===== Card Menu ===== */
+.card {
+  position: relative;
+}
+.menu-btn {
+  position: absolute;
+  top: 10px; left: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #555;
+  z-index: 10;
+}
+.menu-dropdown {
+  position: absolute;
+  top: 35px; left: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: none;
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.menu-dropdown button {
+  display: block;
+  width: 100%;
+  padding: 6px 12px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+.menu-dropdown button:hover {
+  background: #f0f0f0;
+}
+.more-menu .btn-link {
+  text-decoration: none;
+}
+
+/* ===== Create Group Form ===== */
+/* Wrap each label-input pair in a row */
+#create-group-form .form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+/* Labels style */
+#create-group-form label {
+  color: var(--main-purple);
+  font-weight: 600;
+  min-width: 140px;
+  text-align: left;
+  margin: 0;
+  padding-right: 12px;
+}
+/* Inputs style */
+#create-group-form input[type="text"],
+#create-group-form input[type="time"],
+#create-group-form input[type="file"],
+#create-group-form select {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--main-purple);
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+#create-group-form input[type="text"]:focus,
+#create-group-form input[type="time"]:focus,
+#create-group-form input[type="file"]:focus,
+#create-group-form select:focus {
+  outline: none;
+  border-color: var(--main-purple-dark);
+  box-shadow: 0 0 5px var(--main-purple-dark);
+}
+
+/* Bottom margin group with gap */
+#create-group-form .mb-3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+/* Labels in bottom margin group */
+#create-group-form label.form-label {
+  min-width: 140px;
+  color: var(--main-purple);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Inputs in bottom margin group */
+#create-group-form input.form-control {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--main-purple);
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+#create-group-form input.form-control:focus {
+  outline: none;
+  border-color: var(--main-purple-dark);
+  box-shadow: 0 0 5px var(--main-purple-dark);
+}
+
+.default-avatar {
+  width: 100px;
+  height: 100px;
   background-color: #967bb6;
-  border-color: #684d88;
+  border-radius: 50%;
 }
 
-.ms-2 {
-  margin-left: 0.5rem;
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 10px;
 }
 
-  
+/* All buttons */
+.page-btn, .page-arrow {
+  background: white;
+  border: 2px solid var(--main-purple);
+  border-radius: 50%;
+  padding: 8px 14px;
+  color: var(--main-purple);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover and active button effect */
+.page-btn:hover, .page-arrow:hover,
+.page-btn.active {
+  background: var(--main-purple);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Pressed effect */
+.page-btn:active, .page-arrow:active {
+  transform: scale(0.95);
+}
+
+/* Disabled button */
+.page-btn:disabled, .page-arrow:disabled {
+  background: var(--light-gray);
+  color: #aaa;
+  cursor: not-allowed;
+  border-color: var(--light-gray);
+  transform: none;
+}
+
+/* Arrows styling (left and right) */
+.page-arrow {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
+/* Uniform shape on edges */
+.page-btn:first-child, .page-btn:last-child {
+  background: var(--main-purple);
+  color: white;
+  border-color: var(--main-purple);
+}
+
+
+
+
+
+#moreInfoModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#moreInfoModal.active {
+  display: flex;
+}
+
+#moreInfoModal .modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#modalContent {
+  white-space: pre-wrap;
+  color: #333;
+  margin: 10px 0;
+}
+
+#closeModalBtn {
+  margin-top: 5px;
+  background-color: #967bb6;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#closeModalBtn:hover {
+  background-color: #7a619e;
+}
