@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost/CampusNewsAPI/news';
+const API_URL = 'http://localhost:8080/CampusNews/api/news.php';
 
 let newsData = [];
 let allNewsData = []; // Store original unfiltered data

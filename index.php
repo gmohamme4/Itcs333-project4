@@ -28,12 +28,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-<h2>Register</h2>
-<form method="post">
-    <input type="text" name="username" placeholder="Username" required><br><br>
-    <input type="password" name="password" placeholder="Password" required><br><br>
-    <button type="submit">Register</button>
-</form>
-<p><?php echo $message; ?></p>
-<p>Already have an account? <a href="login.php">Login here</a></p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Register</h2>
+        <form method="post">
+            <input type="text" name="username" placeholder="Username" required><br><br>
+            <input type="password" name="password" placeholder="Password" required><br><br>
+            <button type="submit">Register</button>
+        </form>
+        <p><?php echo $message; ?></p>
+        <p>Already have an account? <a href="login.php">Login here</a></p>
+    </div>
+</body>
+</html>

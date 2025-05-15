@@ -27,6 +27,8 @@ body {
   background-color: #967bb6;
   color: white;
   padding: 15px 20px;
+  padding-top: 25px;
+  width:100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -167,32 +169,8 @@ main {
   flex-wrap: nowrap ;
   width: 100% ;
   align-items: stretch;
-  gap : 20px ;
   justify-content: space-between ;
   padding: 10px;
-}
-
-.news-container, .notes-container {
-  width: 100% !important;
-  box-sizing: border-box !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-
-/* News container Scrollbar styling */
-.news-container::-webkit-scrollbar {
-  width: 8px;
-}
-
-.news-container::-webkit-scrollbar-track {
-  background: rgba(150, 123, 182, 0.1);
-  border-radius: 10px;
-}
-
-.news-container::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 10px;
 }
 
 /* Card styling for when user adds news items */
@@ -241,6 +219,7 @@ main {
   
   h1 {
     font-size: 2rem;
+    padding-top: 10px;
   }
   
   .news-container {
@@ -257,69 +236,127 @@ footer {
   background-color: #967bb6;
   color: #fff;
   padding: 1rem 0;
+  width: 100%;
   text-align: center;
   margin-top: auto;
 }
 
-/* Styling for the notes container */
-.news-container,
-.notes-container, 
-.reviews-container,
-.event-container,
-.study-container {
+/* Styling for the news container */
+.news-container{
   background-color: #f8f9fa;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 8px;
   background-color: rgba(150, 123, 182, 0.05);
-  border: 1px solid rgba(150, 123, 182, 0.2);
+  border: 3px dashed #967bb6;
+  width: 100%;
 }
 
-.news-container h2,
-.notes-container h2,
-.reviews-container h2,
-.event-container h2,
-.study-container h2 {
-  color: #333;
-  margin-bottom: 15px;
-  font-weight: 500;
-  border-bottom: 2px solid #967bb6;
-  padding-bottom: 10px;
+.news-container h1 {
+  color: #967bb6;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
+  font-weight: 300;
 }
 
 /* Add scrollbar to notes grid */
-.news-grid,
-.notes-grid ,
-.reviews-grid, 
-.event-grid, 
-.study-grid {
+.news-grid {
   max-height: 400px; /* Set a fixed height to enable scrolling */
   overflow-y: auto; /* Enable vertical scrolling */
   padding: 10px 5px;
 }
 
-/* Custom scrollbar styling */
-.notes-grid::-webkit-scrollbar {
-  width: 8px;
+:root {
+  --primary-color: #967bb6;
+  --primary-dark: #7a5fa0;
+  --primary-light: #b49cd0;
+  --text-on-primary: #ffffff;
+  --background-color: #f8f5fd;
+  --card-bg: #ffffff;
 }
 
-.notes-grid::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 10px;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.notes-grid::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 10px;
+body {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.notes-grid::-webkit-scrollbar-thumb:hover {
-  background: #555;
+.login-container {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
 }
 
-/* For Firefox */
-.notes-grid {
-  scrollbar-width: thin;
-  scrollbar-color: #888 #f1f1f1;
+h2 {
+  color: var(--primary-dark);
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px rgba(150, 123, 182, 0.2);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+a {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.message {
+  color: #d9534f;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.message.success {
+  color: #5cb85c;
+}
